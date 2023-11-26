@@ -1,0 +1,2871 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\bagus> ubuntu
+profile dari /etc/profile
+Profile dari .bash_profile
+baguslap@LAPTOP-LP7RHB4P:~$ yarn install
+yarn install v1.22.21
+info No lockfile found.
+[1/4] Resolving packages...
+[2/4] Fetching packages...
+[3/4] Linking dependencies...
+[4/4] Building fresh packages...
+
+success Saved lockfile.
+Done in 0.06s.
+baguslap@LAPTOP-LP7RHB4P:~$ yarn upgrade
+yarn upgrade v1.22.21
+[1/4] Resolving packages...
+[2/4] Fetching packages...
+[3/4] Linking dependencies...
+[4/4] Rebuilding all packages...
+
+success Saved lockfile.
+success Saved 0 new dependencies.
+Done in 0.08s.
+baguslap@LAPTOP-LP7RHB4P:~$ ls -a
+.              .cache                     .yarn             fileX            komputer1.txt  pc.txt     sc_hm        sy_rmh
+..             .config                    .yarnrc           files            komputer2.txt  pc1.txt    sc_sy        sy_rmh1
+.aws           .docker                    Schoology-docker  hasil            loop.sh        peserta    secret-mail  tessinyal
+.azure         .lesshst                   aksesoris.txt     hasil_gabung.db  me             prog.sh    soal0025     to-pacar
+.bash_history  .local                     aksesoris1.txt    hasilgabung.db   mobil.db       prog01.sh  soal1        ujian025
+.bash_login    .motd_shown                burung            he               node_modules   prog02.sh  soal2        x
+.bash_logout   .profile                   dia               hehome           p1.sh          prog04.sh  soal3        y
+.bash_profile  .sudo_as_admin_successful  file1             kamu             p2.sh          pwaktu.sh  status       yarn.lock
+.bashrc        .viminfo                   fileA             komputer.txt     p3.sh          saya       sy           you
+baguslap@LAPTOP-LP7RHB4P:~$ cd Schoology-docker/
+baguslap@LAPTOP-LP7RHB4P:~/Schoology-docker$ cd schoology/
+baguslap@LAPTOP-LP7RHB4P:~/Schoology-docker/schoology$ yarn build
+yarn run v1.22.21
+$ echo Building React App && sleep 2 && cd app/ && yarn install && yarn build && cd .. && echo Building the Server environment && yarn install && docker-compose build && docker-compose up -d && echo Populating FAKE data && sleep 2 && docker exec -it NODE_WEBSERVER node ./config/generateFakeData.js &&  echo Fake data populated && sleep 1  && echo You are OK to go. Please, access http://localhost:3000
+Building React App
+[1/4] Resolving packages...
+success Already up-to-date.
+$ react-scripts build
+Creating an optimized production build...
+Browserslist: caniuse-lite is outdated. Please run next command `yarn upgrade`
+Compiled successfully.
+
+File sizes after gzip:
+
+  132.59 KB  build/static/js/2.c0ec0713.chunk.js
+  7.02 KB    build/static/js/main.207fc43b.chunk.js
+  765 B      build/static/js/runtime-main.63c1efab.js
+  581 B      build/static/css/2.8271af8e.chunk.css
+  547 B      build/static/css/main.d1b05096.chunk.css
+
+The project was built assuming it is hosted at the server root.
+You can control this with the homepage field in your package.json.
+For example, add this to build it for GitHub Pages:
+
+  "homepage" : "http://myname.github.io/myapp",
+
+The build folder is ready to be deployed.
+You may serve it with a static server:
+
+  yarn global add serve
+  serve -s build
+
+Find out more about deployment here:
+
+  bit.ly/CRA-deploy
+
+Building the Server environment
+[1/4] Resolving packages...
+success Already up-to-date.
+db uses an image, skipping
+redis uses an image, skipping
+Building app
+failed to fetch metadata: fork/exec /usr/local/lib/docker/cli-plugins/docker-buildx: no such file or directory
+
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  214.9MB
+Step 1/7 : FROM node:12.13.1-alpine3.10
+12.13.1-alpine3.10: Pulling from library/node
+89d9c30c1d48: Pull complete
+dece493f0c90: Pull complete
+7f49758756f5: Pull complete
+4d2dff72d46b: Pull complete
+Digest: sha256:b556d8910b851c27c5c8922eeb55d94fe6dbaf878d24bf0c9a8c32ba21cd091a
+Status: Downloaded newer image for node:12.13.1-alpine3.10
+ ---> 3fb8a14691d9
+Step 2/7 : WORKDIR /usr/app
+ ---> Running in 661c4fa39304
+Removing intermediate container 661c4fa39304
+ ---> 8b5ee17eae76
+Step 3/7 : COPY package.json yarn.lock ./
+ ---> aa84c4f00a27
+Step 4/7 : RUN yarn
+ ---> Running in 31ed0f8e711b
+yarn install v1.19.1
+[1/4] Resolving packages...
+[2/4] Fetching packages...
+info fsevents@2.1.2: The platform "linux" is incompatible with this module.
+info "fsevents@2.1.2" is an optional dependency and failed compatibility check. Excluding it from installation.
+[3/4] Linking dependencies...
+[4/4] Building fresh packages...
+Done in 28.19s.
+Removing intermediate container 31ed0f8e711b
+ ---> 2f911974dfec
+Step 5/7 : COPY ./ ./
+ ---> aee01cf463db
+Step 6/7 : EXPOSE 3000
+ ---> Running in f946fdc3899e
+Removing intermediate container f946fdc3899e
+ ---> d9c7250008d2
+Step 7/7 : CMD ["yarn", "start"]
+ ---> Running in 6247009a1b9b
+Removing intermediate container 6247009a1b9b
+ ---> 06c2d646ab6e
+Successfully built 06c2d646ab6e
+Successfully tagged schoology_app:latest
+Creating network "schoology_default" with the default driver
+Pulling db (mongo:)...
+latest: Pulling from library/mongo
+43f89b94cd7d: Pull complete
+54a7480baa9d: Pull complete
+7f9301fbd7df: Pull complete
+5e4470f2e90f: Pull complete
+40d046ff8fd3: Pull complete
+e062d62b861e: Pull complete
+72919e34fde8: Pull complete
+74c3fb6d33e0: Pull complete
+adfd395e3ac5: Pull complete
+Digest: sha256:e86b32dc3df2a30610dd3eeab15132b67d3ae00f3435a3c72ada21b12dfd6c5e
+Status: Downloaded newer image for mongo:latest
+Pulling redis (redis:)...
+latest: Pulling from library/redis
+1f7ce2fa46ab: Pull complete
+3c6368585bf1: Pull complete
+3911d271d7d8: Pull complete
+ac88aa9d4021: Pull complete
+127cd75a68a2: Pull complete
+4f4fb700ef54: Pull complete
+f3993c1104fc: Pull complete
+Digest: sha256:2976bc0437deff693af2dcf081a1d1758de8b413e6de861151a5a136c25eb9e4
+Status: Downloaded newer image for redis:latest
+Creating SCHOOLOGY_REDIS ... done
+Creating SCHOOLOGY_DB    ... done
+Creating NODE_WEBSERVER  ... done
+Populating FAKE data
+DB connected on: mongodb://db:27017/schoologydb
+Generating 1000 Courses
+1 Adding:  { name: 'Advanced coherent toolset', description: 'secondary' }
+2 Adding:  { name: 'Grass-roots secondary support', description: 'value-added' }
+3 Adding:  {
+  name: 'Total even-keeled flexibility',
+  description: 'mission-critical'
+}
+4 Adding:  {
+  name: 'Reverse-engineered incremental hardware',
+  description: 'mobile'
+}
+5 Adding:  {
+  name: 'Customizable asynchronous instruction set',
+  description: 'executive'
+}
+6 Adding:  {
+  name: 'Up-sized attitude-oriented initiative',
+  description: 'multimedia'
+}
+7 Adding:  { name: 'Devolved reciprocal portal', description: 'responsive' }
+8 Adding:  { name: 'Reduced grid-enabled encoding', description: 'tertiary' }
+9 Adding:  { name: 'Managed responsive capability', description: 'system-worthy' }
+10 Adding:  {
+  name: 'De-engineered bi-directional matrices',
+  description: 'human-resource'
+}
+11 Adding:  { name: 'Networked dynamic access', description: 'coherent' }
+12 Adding:  { name: 'Phased object-oriented circuit', description: 'dedicated' }
+13 Adding:  {
+  name: 'User-friendly asymmetric ability',
+  description: 'client-driven'
+}
+14 Adding:  {
+  name: 'Expanded attitude-oriented paradigm',
+  description: 'transitional'
+}
+15 Adding:  {
+  name: 'Re-contextualized encompassing projection',
+  description: 'eco-centric'
+}
+16 Adding:  {
+  name: 'Multi-channelled interactive extranet',
+  description: 'motivating'
+}
+17 Adding:  {
+  name: 'Operative context-sensitive initiative',
+  description: 'grid-enabled'
+}
+18 Adding:  {
+  name: 'Front-line value-added architecture',
+  description: 'solution-oriented'
+}
+19 Adding:  { name: 'Versatile actuating application', description: 'coherent' }
+20 Adding:  {
+  name: 'Front-line bifurcated info-mediaries',
+  description: 'background'
+}
+21 Adding:  { name: 'Robust mobile benchmark', description: 'background' }
+22 Adding:  {
+  name: 'Multi-lateral mission-critical hardware',
+  description: 'holistic'
+}
+23 Adding:  {
+  name: 'Synergized multi-tasking forecast',
+  description: 'homogeneous'
+}
+24 Adding:  {
+  name: 'Innovative client-server conglomeration',
+  description: 'composite'
+}
+25 Adding:  { name: 'Extended coherent product', description: 'cohesive' }
+26 Adding:  { name: 'Synergistic multi-state portal', description: 'responsive' }
+27 Adding:  {
+  name: 'Enhanced incremental internet solution',
+  description: 'analyzing'
+}
+28 Adding:  {
+  name: 'Business-focused 24 hour instruction set',
+  description: 'web-enabled'
+}
+29 Adding:  {
+  name: 'Open-architected upward-trending focus group',
+  description: 'demand-driven'
+}
+30 Adding:  {
+  name: 'Cross-platform tangible software',
+  description: 'zero administration'
+}
+31 Adding:  { name: 'Operative holistic info-mediaries', description: 'local' }
+32 Adding:  { name: 'Virtual actuating matrices', description: 'explicit' }
+33 Adding:  {
+  name: 'Enterprise-wide radical collaboration',
+  description: 'systematic'
+}
+34 Adding:  {
+  name: 'Integrated user-facing methodology',
+  description: 'encompassing'
+}
+35 Adding:  { name: 'Versatile executive collaboration', description: 'dedicated' }
+36 Adding:  {
+  name: 'Reactive incremental flexibility',
+  description: 'next generation'
+}
+37 Adding:  {
+  name: 'Streamlined mission-critical middleware',
+  description: 'neutral'
+}
+38 Adding:  {
+  name: 'Optional user-facing analyzer',
+  description: 'attitude-oriented'
+}
+39 Adding:  { name: 'Switchable high-level frame', description: 'asymmetric' }
+40 Adding:  { name: 'Inverse foreground moderator', description: 'local' }
+41 Adding:  {
+  name: 'Object-based 3rd generation installation',
+  description: 'executive'
+}
+42 Adding:  { name: 'Devolved high-level definition', description: 'eco-centric' }
+43 Adding:  { name: 'Assimilated executive circuit', description: 'impactful' }
+44 Adding:  {
+  name: 'Team-oriented asymmetric internet solution',
+  description: 'discrete'
+}
+45 Adding:  {
+  name: 'Self-enabling methodical ability',
+  description: 'encompassing'
+}
+46 Adding:  {
+  name: 'Multi-tiered object-oriented utilisation',
+  description: 'tangible'
+}
+47 Adding:  { name: 'Profound human-resource algorithm', description: 'impactful' }
+48 Adding:  { name: 'Optional needs-based hub', description: 'heuristic' }
+49 Adding:  {
+  name: 'Future-proofed attitude-oriented functionalities',
+  description: 'mission-critical'
+}
+50 Adding:  { name: 'Ameliorated optimal hardware', description: 'multi-state' }
+51 Adding:  {
+  name: 'Reduced methodical budgetary management',
+  description: 'national'
+}
+52 Adding:  {
+  name: 'Mandatory system-worthy capacity',
+  description: 'multi-state'
+}
+53 Adding:  {
+  name: 'Distributed intermediate local area network',
+  description: 'fault-tolerant'
+}
+54 Adding:  {
+  name: 'Face to face multi-tasking interface',
+  description: 'tangible'
+}
+55 Adding:  {
+  name: 'Diverse fresh-thinking focus group',
+  description: 'interactive'
+}
+56 Adding:  {
+  name: 'Future-proofed dedicated encryption',
+  description: 'optimizing'
+}
+57 Adding:  {
+  name: 'Profit-focused next generation installation',
+  description: 'fault-tolerant'
+}
+58 Adding:  {
+  name: 'Reverse-engineered optimal core',
+  description: '5th generation'
+}
+59 Adding:  {
+  name: 'Profit-focused well-modulated secured line',
+  description: 'bi-directional'
+}
+60 Adding:  {
+  name: 'Upgradable bottom-line approach',
+  description: 'multi-tasking'
+}
+61 Adding:  {
+  name: 'Right-sized leading edge matrices',
+  description: 'optimizing'
+}
+62 Adding:  { name: 'Configurable empowering alliance', description: 'foreground' }
+63 Adding:  { name: 'Innovative incremental emulation', description: 'mobile' }
+64 Adding:  {
+  name: 'Optimized bi-directional data-warehouse',
+  description: 'transitional'
+}
+65 Adding:  {
+  name: 'Networked 5th generation hierarchy',
+  description: 'methodical'
+}
+66 Adding:  { name: 'Secured real-time benchmark', description: 'regional' }
+67 Adding:  {
+  name: 'Innovative clear-thinking budgetary management',
+  description: 'asymmetric'
+}
+68 Adding:  {
+  name: 'Future-proofed interactive service-desk',
+  description: '6th generation'
+}
+69 Adding:  { name: 'Realigned mobile synergy', description: 'neutral' }
+70 Adding:  { name: 'Robust web-enabled software', description: 'background' }
+71 Adding:  {
+  name: 'User-friendly incremental leverage',
+  description: 'human-resource'
+}
+72 Adding:  {
+  name: 'Object-based context-sensitive toolset',
+  description: 'maximized'
+}
+73 Adding:  { name: 'Intuitive coherent intranet', description: 'intermediate' }
+74 Adding:  {
+  name: 'Business-focused mobile budgetary management',
+  description: 'zero tolerance'
+}
+75 Adding:  { name: 'Versatile secondary model', description: 'system-worthy' }
+76 Adding:  { name: 'Robust impactful leverage', description: 'composite' }
+77 Adding:  {
+  name: 'Implemented zero administration archive',
+  description: 'interactive'
+}
+78 Adding:  {
+  name: 'Enterprise-wide zero defect paradigm',
+  description: 'fault-tolerant'
+}
+79 Adding:  { name: 'Inverse upward-trending policy', description: 'cohesive' }
+80 Adding:  {
+  name: 'Operative didactic secured line',
+  description: 'contextually-based'
+}
+81 Adding:  { name: 'Visionary value-added utilisation', description: 'mobile' }
+82 Adding:  {
+  name: 'Business-focused solution-oriented infrastructure',
+  description: 'analyzing'
+}
+83 Adding:  {
+  name: 'Multi-layered explicit customer loyalty',
+  description: 'maximized'
+}
+84 Adding:  { name: 'Public-key asymmetric strategy', description: 'national' }
+85 Adding:  { name: 'Mandatory executive structure', description: 'systemic' }
+86 Adding:  { name: 'Universal secondary circuit', description: 'fresh-thinking' }
+87 Adding:  {
+  name: 'Seamless intermediate customer loyalty',
+  description: 'well-modulated'
+}
+88 Adding:  { name: 'Self-enabling uniform website', description: 'asynchronous' }
+89 Adding:  {
+  name: 'Polarised leading edge policy',
+  description: '4th generation'
+}
+90 Adding:  {
+  name: 'Re-contextualized stable capacity',
+  description: 'methodical'
+}
+91 Adding:  {
+  name: 'Triple-buffered zero defect attitude',
+  description: 'directional'
+}
+92 Adding:  { name: 'Digitized even-keeled software', description: 'scalable' }
+93 Adding:  { name: 'Robust intermediate middleware', description: 'didactic' }
+94 Adding:  {
+  name: 'User-centric upward-trending contingency',
+  description: 'empowering'
+}
+95 Adding:  { name: 'Multi-tiered discrete capacity', description: 'executive' }
+96 Adding:  {
+  name: 'Business-focused hybrid flexibility',
+  description: 'intangible'
+}
+97 Adding:  {
+  name: 'Re-engineered tangible budgetary management',
+  description: 'bifurcated'
+}
+98 Adding:  {
+  name: 'De-engineered multi-tasking focus group',
+  description: '4th generation'
+}
+99 Adding:  { name: 'Visionary directional projection', description: 'optimizing' }
+100 Adding:  { name: 'Programmable systematic application', description: 'stable' }
+101 Adding:  { name: 'Up-sized multi-tasking hierarchy', description: 'holistic' }
+102 Adding:  { name: 'Customer-focused motivating emulation', description: 'local' }
+103 Adding:  { name: 'Organic directional adapter', description: 'disintermediate' }
+104 Adding:  {
+  name: 'Triple-buffered 3rd generation strategy',
+  description: 'context-sensitive'
+}
+105 Adding:  {
+  name: 'Universal object-oriented local area network',
+  description: 'tangible'
+}
+106 Adding:  {
+  name: 'Progressive heuristic algorithm',
+  description: 'client-server'
+}
+107 Adding:  {
+  name: 'Face to face web-enabled software',
+  description: 'zero tolerance'
+}
+108 Adding:  {
+  name: 'Persevering systematic adapter',
+  description: 'next generation'
+}
+109 Adding:  {
+  name: 'User-friendly 6th generation software',
+  description: 'optimizing'
+}
+110 Adding:  {
+  name: 'Decentralized executive productivity',
+  description: 'bottom-line'
+}
+111 Adding:  { name: 'Mandatory regional software', description: 'client-server' }
+112 Adding:  {
+  name: 'Inverse zero tolerance definition',
+  description: 'upward-trending'
+}
+113 Adding:  { name: 'Future-proofed intangible hub', description: 'multi-tasking' }
+114 Adding:  { name: 'Implemented scalable analyzer', description: 'motivating' }
+115 Adding:  {
+  name: 'Stand-alone background productivity',
+  description: '4th generation'
+}
+116 Adding:  { name: 'Persistent impactful toolset', description: 'transitional' }
+117 Adding:  {
+  name: 'Business-focused high-level firmware',
+  description: 'uniform'
+}
+118 Adding:  { name: 'Inverse optimal focus group', description: 'discrete' }
+119 Adding:  {
+  name: 'Programmable responsive paradigm',
+  description: 'system-worthy'
+}
+120 Adding:  { name: 'Cross-group scalable moderator', description: 'discrete' }
+121 Adding:  { name: 'Upgradable reciprocal protocol', description: 'uniform' }
+122 Adding:  { name: 'Expanded zero tolerance portal', description: 'dedicated' }
+123 Adding:  {
+  name: 'Balanced directional challenge',
+  description: 'client-driven'
+}
+124 Adding:  { name: 'Cross-platform hybrid archive', description: 'client-driven' }
+125 Adding:  { name: 'Customer-focused executive frame', description: 'uniform' }
+126 Adding:  {
+  name: 'Right-sized asynchronous system engine',
+  description: 'systematic'
+}
+127 Adding:  { name: 'Horizontal neutral flexibility', description: 'foreground' }
+128 Adding:  { name: 'Realigned exuding throughput', description: 'optimizing' }
+129 Adding:  {
+  name: 'Versatile bandwidth-monitored infrastructure',
+  description: 'tertiary'
+}
+130 Adding:  {
+  name: 'Adaptive full-range interface',
+  description: '4th generation'
+}
+131 Adding:  { name: 'Mandatory scalable algorithm', description: 'reciprocal' }
+132 Adding:  { name: 'Function-based client-server access', description: 'global' }
+133 Adding:  {
+  name: 'Progressive regional flexibility',
+  description: 'bandwidth-monitored'
+}
+134 Adding:  { name: 'Implemented 24 hour model', description: 'multi-tasking' }
+135 Adding:  {
+  name: 'Diverse next generation protocol',
+  description: 'value-added'
+}
+136 Adding:  { name: 'Operative grid-enabled analyzer', description: 'user-facing' }
+137 Adding:  { name: 'Mandatory mobile matrices', description: 'hybrid' }
+138 Adding:  {
+  name: 'Cross-group empowering system engine',
+  description: 'neutral'
+}
+139 Adding:  {
+  name: 'Devolved bi-directional support',
+  description: 'well-modulated'
+}
+140 Adding:  { name: 'Up-sized non-volatile project', description: 'high-level' }
+141 Adding:  { name: 'Proactive stable array', description: 'bandwidth-monitored' }
+142 Adding:  {
+  name: 'Innovative methodical pricing structure',
+  description: 'intermediate'
+}
+143 Adding:  { name: 'Adaptive client-driven moderator', description: 'methodical' }
+144 Adding:  { name: 'Digitized hybrid knowledge base', description: '24 hour' }
+145 Adding:  { name: 'Centralized static help-desk', description: 'client-driven' }
+146 Adding:  {
+  name: 'Compatible impactful policy',
+  description: 'bandwidth-monitored'
+}
+147 Adding:  {
+  name: 'Ameliorated bottom-line process improvement',
+  description: 'high-level'
+}
+148 Adding:  { name: 'Re-engineered real-time challenge', description: 'dynamic' }
+149 Adding:  { name: 'Networked optimal collaboration', description: 'incremental' }
+150 Adding:  {
+  name: 'Versatile systematic data-warehouse',
+  description: 'background'
+}
+151 Adding:  {
+  name: 'Triple-buffered clear-thinking collaboration',
+  description: '5th generation'
+}
+152 Adding:  {
+  name: 'Triple-buffered real-time projection',
+  description: 'background'
+}
+153 Adding:  {
+  name: 'Fundamental systematic infrastructure',
+  description: 'system-worthy'
+}
+154 Adding:  { name: 'Balanced incremental success', description: 'clear-thinking' }
+155 Adding:  {
+  name: 'Switchable 3rd generation info-mediaries',
+  description: 'logistical'
+}
+156 Adding:  { name: 'Polarised maximized methodology', description: 'logistical' }
+157 Adding:  { name: 'Down-sized regional attitude', description: '5th generation' }
+158 Adding:  { name: 'Expanded static functionalities', description: 'local' }
+159 Adding:  { name: 'Implemented 24/7 throughput', description: 'background' }
+160 Adding:  {
+  name: 'Re-contextualized transitional toolset',
+  description: 'leading edge'
+}
+161 Adding:  { name: 'Digitized homogeneous array', description: 'intermediate' }
+162 Adding:  {
+  name: 'Business-focused foreground matrices',
+  description: 'zero administration'
+}
+163 Adding:  {
+  name: 'Operative encompassing collaboration',
+  description: 'tertiary'
+}
+164 Adding:  {
+  name: 'Function-based value-added pricing structure',
+  description: 'neutral'
+}
+165 Adding:  {
+  name: 'Implemented foreground forecast',
+  description: 'clear-thinking'
+}
+166 Adding:  {
+  name: 'Implemented scalable Graphical User Interface',
+  description: 'solution-oriented'
+}
+167 Adding:  {
+  name: 'Progressive multi-state emulation',
+  description: 'grid-enabled'
+}
+168 Adding:  { name: 'Monitored value-added solution', description: 'local' }
+169 Adding:  {
+  name: 'Right-sized user-facing orchestration',
+  description: '3rd generation'
+}
+170 Adding:  { name: 'Automated local hub', description: 'upward-trending' }
+171 Adding:  {
+  name: 'Multi-lateral client-server task-force',
+  description: 'empowering'
+}
+172 Adding:  { name: 'Organic asymmetric alliance', description: 'uniform' }
+173 Adding:  {
+  name: 'Profound intangible solution',
+  description: 'bandwidth-monitored'
+}
+174 Adding:  { name: 'Progressive tertiary core', description: 'disintermediate' }
+175 Adding:  { name: 'Future-proofed bifurcated hardware', description: 'didactic' }
+176 Adding:  { name: 'Centralized eco-centric projection', description: 'exuding' }
+177 Adding:  {
+  name: 'Triple-buffered background internet solution',
+  description: 'object-oriented'
+}
+178 Adding:  {
+  name: 'Right-sized encompassing artificial intelligence',
+  description: 'upward-trending'
+}
+179 Adding:  { name: 'Front-line full-range product', description: 'dedicated' }
+180 Adding:  { name: 'Organized stable moderator', description: 'disintermediate' }
+181 Adding:  {
+  name: 'Integrated eco-centric workforce',
+  description: 'interactive'
+}
+182 Adding:  {
+  name: 'Vision-oriented web-enabled installation',
+  description: 'high-level'
+}
+183 Adding:  {
+  name: 'Assimilated motivating monitoring',
+  description: 'background'
+}
+184 Adding:  {
+  name: 'Cross-group 4th generation infrastructure',
+  description: 'well-modulated'
+}
+185 Adding:  {
+  name: 'Multi-layered heuristic initiative',
+  description: 'motivating'
+}
+186 Adding:  {
+  name: 'Vision-oriented national initiative',
+  description: 'bottom-line'
+}
+187 Adding:  {
+  name: 'Open-source bifurcated secured line',
+  description: 'reciprocal'
+}
+188 Adding:  { name: 'User-friendly hybrid capacity', description: 'intermediate' }
+189 Adding:  { name: 'Centralized scalable benchmark', description: 'actuating' }
+190 Adding:  {
+  name: 'Diverse composite artificial intelligence',
+  description: 'national'
+}
+191 Adding:  { name: 'Exclusive optimal solution', description: 'explicit' }
+192 Adding:  {
+  name: 'Configurable leading edge moderator',
+  description: 'mission-critical'
+}
+193 Adding:  { name: 'Grass-roots maximized flexibility', description: 'local' }
+194 Adding:  { name: 'Advanced asynchronous model', description: 'intermediate' }
+195 Adding:  {
+  name: 'Monitored maximized Graphic Interface',
+  description: 'cohesive'
+}
+196 Adding:  { name: 'Total leading edge database', description: 'needs-based' }
+197 Adding:  {
+  name: 'Multi-tiered bandwidth-monitored internet solution',
+  description: 'encompassing'
+}
+198 Adding:  {
+  name: 'Adaptive zero administration support',
+  description: 'system-worthy'
+}
+199 Adding:  {
+  name: 'Programmable high-level info-mediaries',
+  description: 'dynamic'
+}
+200 Adding:  { name: 'Persevering coherent database', description: 'hybrid' }
+201 Adding:  { name: 'Team-oriented optimal archive', description: 'grid-enabled' }
+202 Adding:  {
+  name: 'Expanded context-sensitive encryption',
+  description: 'multi-tasking'
+}
+203 Adding:  { name: 'Profound reciprocal matrices', description: 'regional' }
+204 Adding:  { name: 'Persevering uniform array', description: 'needs-based' }
+205 Adding:  {
+  name: 'Open-architected disintermediate infrastructure',
+  description: 'static'
+}
+206 Adding:  {
+  name: 'Reverse-engineered demand-driven firmware',
+  description: 'full-range'
+}
+207 Adding:  { name: 'Extended logistical paradigm', description: 'eco-centric' }
+208 Adding:  {
+  name: 'Triple-buffered background time-frame',
+  description: 'tertiary'
+}
+209 Adding:  { name: 'Secured modular customer loyalty', description: 'heuristic' }
+210 Adding:  { name: 'Digitized asymmetric contingency', description: 'optimizing' }
+211 Adding:  {
+  name: 'Reverse-engineered stable firmware',
+  description: 'methodical'
+}
+212 Adding:  { name: 'Public-key hybrid contingency', description: 'dynamic' }
+213 Adding:  {
+  name: 'Balanced mobile internet solution',
+  description: 'eco-centric'
+}
+214 Adding:  {
+  name: 'Persevering solution-oriented conglomeration',
+  description: 'transitional'
+}
+215 Adding:  {
+  name: 'Function-based tertiary instruction set',
+  description: 'object-oriented'
+}
+216 Adding:  { name: 'Phased full-range database', description: 'intermediate' }
+217 Adding:  {
+  name: 'Cloned local artificial intelligence',
+  description: 'didactic'
+}
+218 Adding:  { name: 'Face to face exuding policy', description: 'even-keeled' }
+219 Adding:  { name: 'Visionary systemic benchmark', description: 'asymmetric' }
+220 Adding:  { name: 'Streamlined optimal system engine', description: 'tertiary' }
+221 Adding:  { name: 'Up-sized dynamic structure', description: 'optimizing' }
+222 Adding:  {
+  name: 'Vision-oriented bandwidth-monitored capability',
+  description: 'content-based'
+}
+223 Adding:  {
+  name: 'Grass-roots needs-based structure',
+  description: 'motivating'
+}
+224 Adding:  { name: 'Upgradable regional frame', description: 'leading edge' }
+225 Adding:  {
+  name: 'Down-sized client-driven encoding',
+  description: 'web-enabled'
+}
+226 Adding:  { name: 'Inverse 24/7 hardware', description: 'interactive' }
+227 Adding:  {
+  name: 'Proactive value-added collaboration',
+  description: 'background'
+}
+228 Adding:  {
+  name: 'Multi-layered well-modulated access',
+  description: 'background'
+}
+229 Adding:  { name: 'Intuitive user-facing hub', description: 'clear-thinking' }
+230 Adding:  { name: 'Distributed optimal approach', description: 'static' }
+231 Adding:  {
+  name: 'Secured bandwidth-monitored knowledge user',
+  description: 'hybrid'
+}
+232 Adding:  {
+  name: 'Switchable bottom-line knowledge user',
+  description: 'intangible'
+}
+233 Adding:  {
+  name: 'Implemented modular neural-net',
+  description: 'content-based'
+}
+234 Adding:  {
+  name: 'Reactive discrete service-desk',
+  description: 'human-resource'
+}
+235 Adding:  {
+  name: 'Multi-channelled 5th generation policy',
+  description: 'bottom-line'
+}
+236 Adding:  {
+  name: 'Universal client-server functionalities',
+  description: 'asymmetric'
+}
+237 Adding:  {
+  name: 'Phased well-modulated instruction set',
+  description: 'next generation'
+}
+238 Adding:  {
+  name: 'Multi-lateral methodical definition',
+  description: 'composite'
+}
+239 Adding:  { name: 'Organized optimizing solution', description: 'dynamic' }
+240 Adding:  {
+  name: 'User-centric client-driven internet solution',
+  description: 'responsive'
+}
+241 Adding:  {
+  name: 'Future-proofed 5th generation database',
+  description: 'fresh-thinking'
+}
+242 Adding:  { name: 'Expanded bifurcated utilisation', description: 'actuating' }
+243 Adding:  { name: 'Multi-lateral methodical migration', description: 'mobile' }
+244 Adding:  { name: 'Reactive full-range alliance', description: 'high-level' }
+245 Adding:  {
+  name: 'Visionary bi-directional knowledge user',
+  description: 'interactive'
+}
+246 Adding:  {
+  name: 'Profit-focused client-server initiative',
+  description: 'multimedia'
+}
+247 Adding:  { name: 'Pre-emptive directional model', description: 'local' }
+248 Adding:  {
+  name: 'Advanced fresh-thinking standardization',
+  description: 'context-sensitive'
+}
+249 Adding:  { name: 'Cross-platform tertiary encryption', description: 'static' }
+250 Adding:  { name: 'Function-based heuristic frame', description: 'logistical' }
+251 Adding:  {
+  name: 'Open-architected systematic policy',
+  description: 'even-keeled'
+}
+252 Adding:  {
+  name: 'Programmable logistical secured line',
+  description: 'discrete'
+}
+253 Adding:  {
+  name: 'Programmable maximized approach',
+  description: 'transitional'
+}
+254 Adding:  {
+  name: 'Quality-focused attitude-oriented help-desk',
+  description: 'coherent'
+}
+255 Adding:  {
+  name: 'Fundamental discrete capacity',
+  description: 'disintermediate'
+}
+256 Adding:  {
+  name: 'Switchable full-range knowledge user',
+  description: 'national'
+}
+257 Adding:  {
+  name: 'Down-sized bi-directional leverage',
+  description: 'system-worthy'
+}
+258 Adding:  {
+  name: 'Triple-buffered 3rd generation algorithm',
+  description: 'didactic'
+}
+259 Adding:  { name: 'Up-sized homogeneous definition', description: 'multimedia' }
+260 Adding:  {
+  name: 'Seamless 5th generation orchestration',
+  description: '5th generation'
+}
+261 Adding:  {
+  name: 'Decentralized empowering open system',
+  description: 'tangible'
+}
+262 Adding:  { name: 'Automated national encoding', description: '24 hour' }
+263 Adding:  {
+  name: 'Right-sized foreground synergy',
+  description: 'clear-thinking'
+}
+264 Adding:  { name: 'Organic zero tolerance model', description: 'methodical' }
+265 Adding:  {
+  name: 'User-friendly 6th generation core',
+  description: 'methodical'
+}
+266 Adding:  {
+  name: 'Multi-channelled explicit forecast',
+  description: 'heuristic'
+}
+267 Adding:  { name: 'Versatile 4th generation intranet', description: 'tertiary' }
+268 Adding:  {
+  name: 'Public-key bi-directional moderator',
+  description: 'responsive'
+}
+269 Adding:  {
+  name: 'Streamlined zero defect support',
+  description: '3rd generation'
+}
+270 Adding:  {
+  name: 'Vision-oriented attitude-oriented product',
+  description: 'context-sensitive'
+}
+271 Adding:  {
+  name: 'Managed exuding hardware',
+  description: 'zero administration'
+}
+272 Adding:  {
+  name: 'Realigned grid-enabled application',
+  description: 'content-based'
+}
+273 Adding:  { name: 'Cloned mobile leverage', description: 'solution-oriented' }
+274 Adding:  { name: 'Up-sized bottom-line circuit', description: 'real-time' }
+275 Adding:  {
+  name: 'Ameliorated composite data-warehouse',
+  description: 'high-level'
+}
+276 Adding:  {
+  name: 'De-engineered 3rd generation collaboration',
+  description: 'non-volatile'
+}
+277 Adding:  { name: 'Stand-alone optimal groupware', description: 'global' }
+278 Adding:  {
+  name: 'Monitored context-sensitive structure',
+  description: 'bottom-line'
+}
+279 Adding:  { name: 'Proactive demand-driven leverage', description: 'national' }
+280 Adding:  {
+  name: 'Quality-focused scalable encoding',
+  description: 'logistical'
+}
+281 Adding:  { name: 'Open-source modular model', description: 'bi-directional' }
+282 Adding:  {
+  name: 'Upgradable tertiary customer loyalty',
+  description: 'bandwidth-monitored'
+}
+283 Adding:  { name: 'Open-architected dynamic matrix', description: 'cohesive' }
+284 Adding:  { name: 'Secured tertiary concept', description: 'asymmetric' }
+285 Adding:  {
+  name: 'Face to face 3rd generation paradigm',
+  description: 'next generation'
+}
+286 Adding:  {
+  name: 'Quality-focused fault-tolerant moderator',
+  description: 'uniform'
+}
+287 Adding:  {
+  name: 'Reactive non-volatile projection',
+  description: 'asynchronous'
+}
+288 Adding:  {
+  name: 'Profound optimizing data-warehouse',
+  description: 'human-resource'
+}
+289 Adding:  { name: 'Focused user-facing function', description: 'optimal' }
+290 Adding:  { name: 'Intuitive interactive matrices', description: 'dynamic' }
+291 Adding:  {
+  name: 'Adaptive disintermediate focus group',
+  description: 'attitude-oriented'
+}
+292 Adding:  {
+  name: 'Organized intermediate encoding',
+  description: 'zero tolerance'
+}
+293 Adding:  { name: 'Fundamental uniform service-desk', description: 'high-level' }
+294 Adding:  {
+  name: 'Re-engineered impactful software',
+  description: '5th generation'
+}
+295 Adding:  { name: 'Profound actuating installation', description: 'didactic' }
+296 Adding:  {
+  name: 'Cross-group static superstructure',
+  description: 'zero defect'
+}
+297 Adding:  { name: 'Front-line non-volatile array', description: 'demand-driven' }
+298 Adding:  {
+  name: 'Right-sized exuding open architecture',
+  description: 'modular'
+}
+299 Adding:  { name: 'Programmable explicit matrix', description: 'content-based' }
+300 Adding:  {
+  name: 'Polarised encompassing local area network',
+  description: 'background'
+}
+301 Adding:  { name: 'Optional motivating task-force', description: 'tangible' }
+302 Adding:  { name: 'Up-sized optimal analyzer', description: 'tertiary' }
+303 Adding:  {
+  name: 'Devolved even-keeled data-warehouse',
+  description: 'clear-thinking'
+}
+304 Adding:  {
+  name: 'Profit-focused foreground budgetary management',
+  description: 'multi-tasking'
+}
+305 Adding:  { name: 'Adaptive heuristic monitoring', description: 'uniform' }
+306 Adding:  {
+  name: 'Face to face logistical customer loyalty',
+  description: 'multi-state'
+}
+307 Adding:  {
+  name: 'Polarised systematic framework',
+  description: 'object-oriented'
+}
+308 Adding:  {
+  name: 'Re-contextualized uniform utilisation',
+  description: 'intangible'
+}
+309 Adding:  { name: 'Operative real-time success', description: 'even-keeled' }
+310 Adding:  { name: 'Robust even-keeled neural-net', description: 'eco-centric' }
+311 Adding:  { name: 'Customer-focused responsive project', description: 'radical' }
+312 Adding:  {
+  name: 'Distributed object-oriented data-warehouse',
+  description: 'asymmetric'
+}
+313 Adding:  { name: 'Programmable eco-centric protocol', description: 'national' }
+314 Adding:  { name: 'Open-source client-driven success', description: 'static' }
+315 Adding:  {
+  name: 'Quality-focused optimizing challenge',
+  description: 'upward-trending'
+}
+316 Adding:  {
+  name: 'Vision-oriented interactive secured line',
+  description: 'fault-tolerant'
+}
+317 Adding:  { name: 'Decentralized dynamic monitoring', description: 'systematic' }
+318 Adding:  {
+  name: 'Profit-focused optimizing Graphical User Interface',
+  description: 'mobile'
+}
+319 Adding:  {
+  name: 'Quality-focused directional groupware',
+  description: 'systemic'
+}
+320 Adding:  {
+  name: 'Polarised motivating productivity',
+  description: 'encompassing'
+}
+321 Adding:  { name: 'Secured real-time product', description: 'full-range' }
+322 Adding:  { name: 'Organic encompassing matrices', description: 'national' }
+323 Adding:  {
+  name: 'Business-focused disintermediate function',
+  description: 'tertiary'
+}
+324 Adding:  { name: 'Extended transitional leverage', description: 'optimal' }
+325 Adding:  { name: 'Ergonomic bottom-line software', description: 'full-range' }
+326 Adding:  { name: 'Phased fresh-thinking help-desk', description: 'hybrid' }
+327 Adding:  {
+  name: 'Configurable dynamic infrastructure',
+  description: 'analyzing'
+}
+328 Adding:  {
+  name: 'Progressive client-server firmware',
+  description: 'bi-directional'
+}
+329 Adding:  {
+  name: 'Networked uniform monitoring',
+  description: 'object-oriented'
+}
+330 Adding:  {
+  name: 'Advanced multi-tasking open architecture',
+  description: 'grid-enabled'
+}
+331 Adding:  { name: 'Up-sized asynchronous solution', description: 'hybrid' }
+332 Adding:  { name: 'Switchable actuating circuit', description: 'grid-enabled' }
+333 Adding:  {
+  name: 'Centralized human-resource utilisation',
+  description: 'dynamic'
+}
+334 Adding:  {
+  name: 'Stand-alone real-time task-force',
+  description: 'grid-enabled'
+}
+335 Adding:  { name: 'Ergonomic full-range help-desk', description: 'dedicated' }
+336 Adding:  { name: 'Operative 24 hour policy', description: 'analyzing' }
+337 Adding:  {
+  name: 'Synergized system-worthy Graphical User Interface',
+  description: 'well-modulated'
+}
+338 Adding:  { name: 'Innovative reciprocal emulation', description: 'background' }
+339 Adding:  {
+  name: 'Profit-focused intermediate time-frame',
+  description: 'homogeneous'
+}
+340 Adding:  { name: 'Intuitive object-oriented archive', description: 'dynamic' }
+341 Adding:  { name: 'Diverse hybrid conglomeration', description: 'bifurcated' }
+342 Adding:  {
+  name: 'Customizable interactive forecast',
+  description: 'motivating'
+}
+343 Adding:  { name: 'Sharable asymmetric encoding', description: 'fresh-thinking' }
+344 Adding:  { name: 'Synergized responsive matrix', description: 'demand-driven' }
+345 Adding:  { name: 'Devolved 4th generation hierarchy', description: 'holistic' }
+346 Adding:  {
+  name: 'Synchronised bifurcated help-desk',
+  description: 'optimizing'
+}
+347 Adding:  {
+  name: 'Ameliorated composite productivity',
+  description: 'mission-critical'
+}
+348 Adding:  { name: 'Pre-emptive optimal middleware', description: 'dedicated' }
+349 Adding:  { name: 'Exclusive responsive core', description: 'multi-state' }
+350 Adding:  {
+  name: 'De-engineered mission-critical portal',
+  description: 'systemic'
+}
+351 Adding:  {
+  name: 'Open-source client-server installation',
+  description: 'systematic'
+}
+352 Adding:  {
+  name: 'User-centric neutral workforce',
+  description: 'contextually-based'
+}
+353 Adding:  {
+  name: 'Horizontal systemic orchestration',
+  description: 'empowering'
+}
+354 Adding:  {
+  name: 'Switchable context-sensitive synergy',
+  description: 'holistic'
+}
+355 Adding:  { name: 'Organized full-range analyzer', description: 'high-level' }
+356 Adding:  {
+  name: 'Integrated asymmetric superstructure',
+  description: 'high-level'
+}
+357 Adding:  { name: 'Up-sized full-range strategy', description: 'coherent' }
+358 Adding:  { name: 'Implemented zero defect capability', description: 'regional' }
+359 Adding:  {
+  name: 'Programmable client-server algorithm',
+  description: 'web-enabled'
+}
+360 Adding:  { name: 'Right-sized hybrid throughput', description: 'user-facing' }
+361 Adding:  { name: 'Decentralized optimal approach', description: 'secondary' }
+362 Adding:  {
+  name: 'Customizable analyzing application',
+  description: 'directional'
+}
+363 Adding:  {
+  name: 'Fully-configurable interactive moratorium',
+  description: 'tertiary'
+}
+364 Adding:  {
+  name: 'Vision-oriented radical installation',
+  description: 'client-driven'
+}
+365 Adding:  {
+  name: 'Persevering mission-critical archive',
+  description: 'encompassing'
+}
+366 Adding:  {
+  name: 'Cross-platform mobile internet solution',
+  description: 'high-level'
+}
+367 Adding:  {
+  name: 'Customer-focused demand-driven encryption',
+  description: 'scalable'
+}
+368 Adding:  {
+  name: 'Distributed attitude-oriented circuit',
+  description: 'tangible'
+}
+369 Adding:  {
+  name: 'Polarised explicit process improvement',
+  description: 'well-modulated'
+}
+370 Adding:  {
+  name: 'Programmable responsive synergy',
+  description: 'object-oriented'
+}
+371 Adding:  { name: 'Streamlined dynamic adapter', description: 'stable' }
+372 Adding:  {
+  name: 'Virtual clear-thinking challenge',
+  description: 'disintermediate'
+}
+373 Adding:  { name: 'Diverse user-facing definition', description: 'neutral' }
+374 Adding:  {
+  name: 'Reactive client-driven collaboration',
+  description: 'contextually-based'
+}
+375 Adding:  {
+  name: 'Triple-buffered radical firmware',
+  description: '3rd generation'
+}
+376 Adding:  { name: 'Proactive exuding throughput', description: 'heuristic' }
+377 Adding:  { name: 'Customizable scalable array', description: 'national' }
+378 Adding:  {
+  name: 'Quality-focused modular installation',
+  description: 'transitional'
+}
+379 Adding:  { name: 'Public-key logistical framework', description: 'logistical' }
+380 Adding:  {
+  name: 'Intuitive eco-centric process improvement',
+  description: 'stable'
+}
+381 Adding:  { name: 'Reduced real-time conglomeration', description: 'scalable' }
+382 Adding:  { name: 'Optimized human-resource success', description: 'maximized' }
+383 Adding:  { name: 'Programmable radical contingency', description: 'tangible' }
+384 Adding:  { name: 'Secured actuating alliance', description: '24/7' }
+385 Adding:  {
+  name: 'Expanded regional infrastructure',
+  description: 'object-oriented'
+}
+386 Adding:  { name: 'Managed systemic time-frame', description: 'next generation' }
+387 Adding:  {
+  name: 'User-centric neutral functionalities',
+  description: 'multi-state'
+}
+388 Adding:  { name: 'Seamless zero defect matrix', description: 'optimal' }
+389 Adding:  { name: 'Streamlined foreground circuit', description: 'actuating' }
+390 Adding:  { name: 'Proactive multi-state toolset', description: 'content-based' }
+391 Adding:  { name: 'Proactive real-time extranet', description: 'empowering' }
+392 Adding:  {
+  name: 'Ergonomic bandwidth-monitored encryption',
+  description: 'high-level'
+}
+393 Adding:  { name: 'Virtual modular function', description: 'leading edge' }
+394 Adding:  {
+  name: 'Reverse-engineered multi-tasking frame',
+  description: 'asymmetric'
+}
+395 Adding:  { name: 'Organic mobile groupware', description: 'optimizing' }
+396 Adding:  {
+  name: 'Programmable discrete website',
+  description: 'context-sensitive'
+}
+397 Adding:  {
+  name: 'Public-key next generation capability',
+  description: 'bifurcated'
+}
+398 Adding:  {
+  name: 'Universal tangible algorithm',
+  description: 'contextually-based'
+}
+399 Adding:  { name: 'Focused zero tolerance neural-net', description: 'explicit' }
+400 Adding:  { name: 'Cloned mobile productivity', description: 'eco-centric' }
+401 Adding:  {
+  name: 'Polarised object-oriented model',
+  description: 'object-oriented'
+}
+402 Adding:  { name: 'Robust homogeneous interface', description: 'multi-state' }
+403 Adding:  { name: 'Phased asymmetric encoding', description: 'value-added' }
+404 Adding:  {
+  name: 'Quality-focused incremental challenge',
+  description: 'web-enabled'
+}
+405 Adding:  { name: 'Devolved zero administration policy', description: '24 hour' }
+406 Adding:  {
+  name: 'Virtual zero tolerance matrix',
+  description: 'object-oriented'
+}
+407 Adding:  { name: 'Organized non-volatile concept', description: 'full-range' }
+408 Adding:  { name: 'Cross-group radical database', description: 'maximized' }
+409 Adding:  { name: 'User-centric tertiary secured line', description: 'mobile' }
+410 Adding:  {
+  name: 'Seamless solution-oriented function',
+  description: 'client-server'
+}
+411 Adding:  { name: 'Polarised actuating infrastructure', description: 'mobile' }
+412 Adding:  {
+  name: 'User-centric 4th generation matrices',
+  description: 'empowering'
+}
+413 Adding:  {
+  name: 'Synchronised exuding process improvement',
+  description: 'eco-centric'
+}
+414 Adding:  {
+  name: 'Automated bottom-line knowledge user',
+  description: 'non-volatile'
+}
+415 Adding:  { name: 'User-friendly static alliance', description: 'eco-centric' }
+416 Adding:  { name: 'Phased systemic superstructure', description: 'directional' }
+417 Adding:  { name: 'Decentralized didactic contingency', description: 'scalable' }
+418 Adding:  { name: 'Function-based optimizing firmware', description: 'tangible' }
+419 Adding:  {
+  name: 'Implemented 3rd generation interface',
+  description: 'executive'
+}
+420 Adding:  {
+  name: 'Multi-layered tertiary infrastructure',
+  description: 'asymmetric'
+}
+421 Adding:  {
+  name: 'Persevering multi-tasking methodology',
+  description: 'impactful'
+}
+422 Adding:  {
+  name: 'Virtual multimedia utilisation',
+  description: 'clear-thinking'
+}
+423 Adding:  {
+  name: 'Front-line solution-oriented orchestration',
+  description: 'multi-state'
+}
+424 Adding:  {
+  name: 'Implemented web-enabled utilisation',
+  description: 'non-volatile'
+}
+425 Adding:  { name: 'Upgradable regional concept', description: 'leading edge' }
+426 Adding:  { name: 'Managed web-enabled time-frame', description: 'encompassing' }
+427 Adding:  {
+  name: 'Self-enabling bi-directional hierarchy',
+  description: 'zero defect'
+}
+428 Adding:  {
+  name: 'Multi-layered grid-enabled interface',
+  description: 'heuristic'
+}
+429 Adding:  {
+  name: 'Ameliorated 5th generation solution',
+  description: 'value-added'
+}
+430 Adding:  { name: 'Stand-alone mobile hierarchy', description: 'actuating' }
+431 Adding:  { name: 'Realigned analyzing utilisation', description: 'cohesive' }
+432 Adding:  {
+  name: 'Down-sized solution-oriented internet solution',
+  description: 'demand-driven'
+}
+433 Adding:  {
+  name: 'Horizontal logistical function',
+  description: 'fresh-thinking'
+}
+434 Adding:  { name: 'Implemented multi-state alliance', description: 'tertiary' }
+435 Adding:  {
+  name: 'User-friendly 5th generation frame',
+  description: 'upward-trending'
+}
+436 Adding:  {
+  name: 'Proactive grid-enabled knowledge base',
+  description: 'fault-tolerant'
+}
+437 Adding:  {
+  name: 'Monitored heuristic service-desk',
+  description: 'object-oriented'
+}
+438 Adding:  {
+  name: 'Balanced leading edge methodology',
+  description: 'logistical'
+}
+439 Adding:  {
+  name: 'Synergized didactic local area network',
+  description: 'solution-oriented'
+}
+440 Adding:  {
+  name: 'Horizontal 4th generation task-force',
+  description: 'mission-critical'
+}
+441 Adding:  {
+  name: 'Managed context-sensitive moratorium',
+  description: 'high-level'
+}
+442 Adding:  { name: 'Devolved coherent methodology', description: 'web-enabled' }
+443 Adding:  { name: 'Right-sized scalable structure', description: 'reciprocal' }
+444 Adding:  {
+  name: 'Visionary exuding orchestration',
+  description: 'intermediate'
+}
+445 Adding:  {
+  name: 'Multi-channelled uniform implementation',
+  description: 'secondary'
+}
+446 Adding:  {
+  name: 'Enterprise-wide directional artificial intelligence',
+  description: 'tertiary'
+}
+447 Adding:  { name: 'Streamlined scalable help-desk', description: 'composite' }
+448 Adding:  { name: 'Grass-roots methodical time-frame', description: 'composite' }
+449 Adding:  {
+  name: 'User-centric multi-tasking application',
+  description: 'well-modulated'
+}
+450 Adding:  { name: 'Diverse secondary approach', description: 'web-enabled' }
+451 Adding:  { name: 'Balanced logistical capability', description: 'multimedia' }
+452 Adding:  {
+  name: 'Configurable 3rd generation productivity',
+  description: 'well-modulated'
+}
+453 Adding:  { name: 'Robust multimedia core', description: 'tangible' }
+454 Adding:  {
+  name: 'Upgradable value-added secured line',
+  description: 'multimedia'
+}
+455 Adding:  {
+  name: 'Streamlined intermediate protocol',
+  description: 'background'
+}
+456 Adding:  {
+  name: 'Monitored encompassing pricing structure',
+  description: 'human-resource'
+}
+457 Adding:  {
+  name: 'Synchronised clear-thinking intranet',
+  description: 'high-level'
+}
+458 Adding:  {
+  name: 'Intuitive needs-based infrastructure',
+  description: 'directional'
+}
+459 Adding:  { name: 'Inverse zero tolerance framework', description: 'scalable' }
+460 Adding:  {
+  name: 'Operative solution-oriented benchmark',
+  description: 'exuding'
+}
+461 Adding:  {
+  name: 'Open-architected responsive workforce',
+  description: 'static'
+}
+462 Adding:  {
+  name: 'Horizontal system-worthy moratorium',
+  description: 'clear-thinking'
+}
+463 Adding:  { name: 'Synergistic radical contingency', description: 'dynamic' }
+464 Adding:  {
+  name: 'Team-oriented scalable data-warehouse',
+  description: 'explicit'
+}
+465 Adding:  {
+  name: 'Customer-focused 5th generation knowledge user',
+  description: 'responsive'
+}
+466 Adding:  { name: 'Optimized transitional definition', description: 'static' }
+467 Adding:  {
+  name: 'Integrated well-modulated artificial intelligence',
+  description: 'explicit'
+}
+468 Adding:  { name: 'Synchronised even-keeled task-force', description: 'dynamic' }
+469 Adding:  {
+  name: 'Advanced bandwidth-monitored parallelism',
+  description: 'cohesive'
+}
+470 Adding:  { name: 'Integrated mobile interface', description: 'hybrid' }
+471 Adding:  {
+  name: 'Grass-roots scalable local area network',
+  description: 'zero defect'
+}
+472 Adding:  {
+  name: 'Monitored multi-state data-warehouse',
+  description: 'composite'
+}
+473 Adding:  { name: 'Balanced coherent collaboration', description: 'homogeneous' }
+474 Adding:  {
+  name: 'De-engineered context-sensitive open architecture',
+  description: 'radical'
+}
+475 Adding:  {
+  name: 'Upgradable zero administration orchestration',
+  description: 'maximized'
+}
+476 Adding:  { name: 'Optional asymmetric forecast', description: 'encompassing' }
+477 Adding:  {
+  name: 'Persevering encompassing standardization',
+  description: 'zero tolerance'
+}
+478 Adding:  { name: 'Visionary modular portal', description: 'multi-state' }
+479 Adding:  { name: 'Managed 24/7 service-desk', description: 'incremental' }
+480 Adding:  { name: 'Integrated bottom-line initiative', description: 'local' }
+481 Adding:  {
+  name: 'Ameliorated responsive secured line',
+  description: 'needs-based'
+}
+482 Adding:  { name: 'Object-based mobile middleware', description: 'executive' }
+483 Adding:  { name: 'Managed explicit contingency', description: 'value-added' }
+484 Adding:  {
+  name: 'Self-enabling 6th generation productivity',
+  description: 'fresh-thinking'
+}
+485 Adding:  {
+  name: 'Public-key solution-oriented website',
+  description: 'regional'
+}
+486 Adding:  { name: 'Optional fresh-thinking database', description: 'reciprocal' }
+487 Adding:  { name: 'Organic intangible circuit', description: 'maximized' }
+488 Adding:  { name: 'Networked reciprocal archive', description: 'full-range' }
+489 Adding:  {
+  name: 'Ergonomic tertiary orchestration',
+  description: 'eco-centric'
+}
+490 Adding:  { name: 'Phased bottom-line extranet', description: 'fault-tolerant' }
+491 Adding:  {
+  name: 'Multi-tiered regional protocol',
+  description: 'context-sensitive'
+}
+492 Adding:  {
+  name: 'Enterprise-wide context-sensitive methodology',
+  description: 'asynchronous'
+}
+493 Adding:  {
+  name: 'Quality-focused cohesive encryption',
+  description: 'system-worthy'
+}
+494 Adding:  {
+  name: 'Future-proofed asynchronous orchestration',
+  description: 'coherent'
+}
+495 Adding:  {
+  name: 'Operative zero defect flexibility',
+  description: 'eco-centric'
+}
+496 Adding:  { name: 'Cloned coherent workforce', description: 'dynamic' }
+497 Adding:  {
+  name: 'Organized content-based artificial intelligence',
+  description: 'didactic'
+}
+498 Adding:  {
+  name: 'Ergonomic even-keeled benchmark',
+  description: 'human-resource'
+}
+499 Adding:  { name: 'Advanced maximized policy', description: 'logistical' }
+500 Adding:  {
+  name: 'Synchronised directional open architecture',
+  description: 'multi-state'
+}
+501 Adding:  {
+  name: 'Cross-group optimizing policy',
+  description: 'solution-oriented'
+}
+502 Adding:  {
+  name: 'Horizontal responsive time-frame',
+  description: 'solution-oriented'
+}
+503 Adding:  { name: 'Open-source high-level help-desk', description: 'mobile' }
+504 Adding:  { name: 'Integrated executive model', description: 'fresh-thinking' }
+505 Adding:  { name: 'Total empowering monitoring', description: 'fault-tolerant' }
+506 Adding:  { name: 'Balanced optimizing matrix', description: 'hybrid' }
+507 Adding:  {
+  name: 'Versatile bandwidth-monitored firmware',
+  description: 'intermediate'
+}
+508 Adding:  { name: 'Ameliorated clear-thinking protocol', description: 'optimal' }
+509 Adding:  {
+  name: 'Multi-tiered composite emulation',
+  description: 'content-based'
+}
+510 Adding:  { name: 'Total foreground success', description: 'systemic' }
+511 Adding:  { name: 'Distributed methodical access', description: 'motivating' }
+512 Adding:  { name: 'Face to face system-worthy model', description: 'systemic' }
+513 Adding:  {
+  name: 'Synergized multi-state framework',
+  description: 'multi-state'
+}
+514 Adding:  {
+  name: 'Right-sized human-resource task-force',
+  description: 'static'
+}
+515 Adding:  {
+  name: 'Pre-emptive bottom-line hierarchy',
+  description: 'intangible'
+}
+516 Adding:  { name: 'Public-key dedicated time-frame', description: 'real-time' }
+517 Adding:  {
+  name: 'Total 3rd generation conglomeration',
+  description: 'background'
+}
+518 Adding:  { name: 'Cross-group real-time complexity', description: 'dynamic' }
+519 Adding:  {
+  name: 'Balanced zero defect flexibility',
+  description: 'user-facing'
+}
+520 Adding:  { name: 'Quality-focused uniform adapter', description: 'tertiary' }
+521 Adding:  {
+  name: 'Centralized object-oriented internet solution',
+  description: 'value-added'
+}
+522 Adding:  { name: 'Reactive systemic product', description: '24/7' }
+523 Adding:  { name: 'Phased non-volatile methodology', description: 'bifurcated' }
+524 Adding:  {
+  name: 'Optional contextually-based migration',
+  description: 'multimedia'
+}
+525 Adding:  {
+  name: 'Balanced web-enabled productivity',
+  description: 'system-worthy'
+}
+526 Adding:  { name: 'Versatile optimizing database', description: 'even-keeled' }
+527 Adding:  { name: 'Automated client-driven intranet', description: 'static' }
+528 Adding:  { name: 'Ameliorated dynamic open system', description: 'secondary' }
+529 Adding:  { name: 'Profound coherent open architecture', description: '24/7' }
+530 Adding:  {
+  name: 'Fully-configurable impactful customer loyalty',
+  description: 'foreground'
+}
+531 Adding:  {
+  name: 'Organized disintermediate framework',
+  description: 'high-level'
+}
+532 Adding:  {
+  name: 'Intuitive multi-tasking encoding',
+  description: 'contextually-based'
+}
+533 Adding:  { name: 'Mandatory zero defect capability', description: 'actuating' }
+534 Adding:  {
+  name: 'Programmable leading edge concept',
+  description: 'methodical'
+}
+535 Adding:  {
+  name: 'Function-based clear-thinking orchestration',
+  description: 'explicit'
+}
+536 Adding:  {
+  name: 'Networked attitude-oriented secured line',
+  description: 'dedicated'
+}
+537 Adding:  { name: 'Optional logistical circuit', description: 'asymmetric' }
+538 Adding:  {
+  name: 'Persevering multi-state initiative',
+  description: 'even-keeled'
+}
+539 Adding:  {
+  name: 'Multi-layered multimedia intranet',
+  description: 'methodical'
+}
+540 Adding:  {
+  name: 'Focused object-oriented local area network',
+  description: 'disintermediate'
+}
+541 Adding:  { name: 'Robust asymmetric projection', description: '5th generation' }
+542 Adding:  { name: 'Ergonomic 24/7 archive', description: 'contextually-based' }
+543 Adding:  {
+  name: 'Managed optimizing budgetary management',
+  description: 'client-driven'
+}
+544 Adding:  {
+  name: 'Open-source executive service-desk',
+  description: 'heuristic'
+}
+545 Adding:  {
+  name: 'Distributed executive knowledge user',
+  description: 'dynamic'
+}
+546 Adding:  {
+  name: 'Multi-tiered global local area network',
+  description: 'encompassing'
+}
+547 Adding:  {
+  name: 'Open-architected static firmware',
+  description: 'incremental'
+}
+548 Adding:  {
+  name: 'Front-line client-server system engine',
+  description: 'secondary'
+}
+549 Adding:  {
+  name: 'Fully-configurable 4th generation throughput',
+  description: 'clear-thinking'
+}
+550 Adding:  {
+  name: 'Business-focused intangible initiative',
+  description: 'local'
+}
+551 Adding:  { name: 'Public-key exuding info-mediaries', description: 'composite' }
+552 Adding:  { name: 'Universal local projection', description: 'incremental' }
+553 Adding:  {
+  name: 'Proactive client-server application',
+  description: 'multi-tasking'
+}
+554 Adding:  {
+  name: 'Future-proofed 6th generation implementation',
+  description: 'mobile'
+}
+555 Adding:  {
+  name: 'Optimized disintermediate knowledge base',
+  description: 'fresh-thinking'
+}
+556 Adding:  {
+  name: 'Universal 3rd generation interface',
+  description: 'human-resource'
+}
+557 Adding:  { name: 'Visionary multimedia toolset', description: 'demand-driven' }
+558 Adding:  {
+  name: 'Adaptive interactive info-mediaries',
+  description: 'bifurcated'
+}
+559 Adding:  {
+  name: 'Business-focused intermediate complexity',
+  description: 'bifurcated'
+}
+560 Adding:  {
+  name: 'Fully-configurable multi-state encryption',
+  description: 'systematic'
+}
+561 Adding:  { name: 'Front-line multi-state intranet', description: 'static' }
+562 Adding:  {
+  name: 'Expanded optimizing attitude',
+  description: 'bandwidth-monitored'
+}
+563 Adding:  {
+  name: 'Integrated upward-trending pricing structure',
+  description: 'systemic'
+}
+564 Adding:  {
+  name: 'Quality-focused intangible paradigm',
+  description: 'homogeneous'
+}
+565 Adding:  {
+  name: 'Extended composite internet solution',
+  description: '3rd generation'
+}
+566 Adding:  {
+  name: 'Assimilated bandwidth-monitored matrix',
+  description: 'reciprocal'
+}
+567 Adding:  {
+  name: 'Re-contextualized mobile initiative',
+  description: 'intermediate'
+}
+568 Adding:  { name: 'Managed actuating alliance', description: 'zero defect' }
+569 Adding:  { name: 'Upgradable even-keeled access', description: '24 hour' }
+570 Adding:  { name: 'Synergistic content-based website', description: 'actuating' }
+571 Adding:  { name: 'Enhanced actuating website', description: 'composite' }
+572 Adding:  {
+  name: 'Vision-oriented grid-enabled open architecture',
+  description: 'even-keeled'
+}
+573 Adding:  {
+  name: 'Grass-roots bifurcated encryption',
+  description: 'bi-directional'
+}
+574 Adding:  {
+  name: 'Ergonomic multi-state productivity',
+  description: 'demand-driven'
+}
+575 Adding:  {
+  name: 'Multi-channelled systematic local area network',
+  description: 'analyzing'
+}
+576 Adding:  {
+  name: 'Programmable stable neural-net',
+  description: '5th generation'
+}
+577 Adding:  { name: 'Operative responsive benchmark', description: 'secondary' }
+578 Adding:  { name: 'Multi-lateral stable project', description: '3rd generation' }
+579 Adding:  {
+  name: 'Polarised optimal migration',
+  description: 'contextually-based'
+}
+580 Adding:  {
+  name: 'Progressive user-facing data-warehouse',
+  description: 'human-resource'
+}
+581 Adding:  { name: 'Sharable context-sensitive model', description: 'systemic' }
+582 Adding:  { name: 'Seamless dynamic superstructure', description: 'neutral' }
+583 Adding:  { name: 'Optimized non-volatile framework', description: 'intangible' }
+584 Adding:  { name: 'Stand-alone heuristic interface', description: 'discrete' }
+585 Adding:  {
+  name: 'Switchable interactive initiative',
+  description: 'contextually-based'
+}
+586 Adding:  { name: 'Distributed uniform attitude', description: 'hybrid' }
+587 Adding:  {
+  name: 'Grass-roots user-facing Graphic Interface',
+  description: 'background'
+}
+588 Adding:  { name: 'Front-line regional archive', description: 'disintermediate' }
+589 Adding:  { name: 'Realigned mobile core', description: 'transitional' }
+590 Adding:  {
+  name: 'Decentralized optimal strategy',
+  description: 'client-server'
+}
+591 Adding:  {
+  name: 'Grass-roots impactful artificial intelligence',
+  description: 'regional'
+}
+592 Adding:  { name: 'Reduced 24 hour toolset', description: 'directional' }
+593 Adding:  {
+  name: 'Universal even-keeled orchestration',
+  description: 'interactive'
+}
+594 Adding:  {
+  name: 'Down-sized local Graphic Interface',
+  description: '6th generation'
+}
+595 Adding:  {
+  name: 'Switchable content-based time-frame',
+  description: 'zero defect'
+}
+596 Adding:  { name: 'Cross-platform uniform project', description: 'multimedia' }
+597 Adding:  {
+  name: 'Multi-layered intermediate toolset',
+  description: '5th generation'
+}
+598 Adding:  {
+  name: 'Re-contextualized multi-tasking contingency',
+  description: 'fault-tolerant'
+}
+599 Adding:  {
+  name: 'Persevering 4th generation customer loyalty',
+  description: 'intermediate'
+}
+600 Adding:  { name: 'Robust explicit hardware', description: 'static' }
+601 Adding:  {
+  name: 'Managed transitional implementation',
+  description: 'even-keeled'
+}
+602 Adding:  { name: 'Re-engineered neutral core', description: 'analyzing' }
+603 Adding:  { name: 'Extended 24 hour model', description: 'multimedia' }
+604 Adding:  { name: 'Inverse high-level capability', description: 'foreground' }
+605 Adding:  {
+  name: 'Distributed composite emulation',
+  description: 'multi-tasking'
+}
+606 Adding:  { name: 'Versatile 24/7 leverage', description: 'multi-state' }
+607 Adding:  {
+  name: 'Right-sized next generation structure',
+  description: 'coherent'
+}
+608 Adding:  { name: 'Innovative 24 hour policy', description: 'zero defect' }
+609 Adding:  { name: 'Organized 24/7 support', description: 'fresh-thinking' }
+610 Adding:  {
+  name: 'Assimilated upward-trending approach',
+  description: 'solution-oriented'
+}
+611 Adding:  {
+  name: 'Synchronised secondary superstructure',
+  description: 'background'
+}
+612 Adding:  { name: 'Expanded didactic definition', description: 'needs-based' }
+613 Adding:  {
+  name: 'Intuitive system-worthy service-desk',
+  description: 'didactic'
+}
+614 Adding:  {
+  name: 'Managed national Graphical User Interface',
+  description: 'dynamic'
+}
+615 Adding:  { name: 'Switchable global concept', description: 'optimal' }
+616 Adding:  { name: 'Cloned hybrid complexity', description: 'upward-trending' }
+617 Adding:  {
+  name: 'Optional zero tolerance service-desk',
+  description: 'reciprocal'
+}
+618 Adding:  { name: 'Robust modular migration', description: 'demand-driven' }
+619 Adding:  { name: 'Virtual scalable forecast', description: 'encompassing' }
+620 Adding:  {
+  name: 'Digitized bifurcated flexibility',
+  description: 'mission-critical'
+}
+621 Adding:  {
+  name: 'Ameliorated asymmetric info-mediaries',
+  description: 'maximized'
+}
+622 Adding:  { name: 'Secured exuding archive', description: 'well-modulated' }
+623 Adding:  { name: 'Innovative composite interface', description: 'optimal' }
+624 Adding:  { name: 'Polarised mobile productivity', description: 'discrete' }
+625 Adding:  { name: 'Proactive holistic moderator', description: 'zero defect' }
+626 Adding:  { name: 'Reactive human-resource approach', description: 'neutral' }
+627 Adding:  { name: 'Organic system-worthy intranet', description: 'heuristic' }
+628 Adding:  { name: 'Enhanced incremental project', description: 'intangible' }
+629 Adding:  {
+  name: 'Enhanced zero administration frame',
+  description: 'multimedia'
+}
+630 Adding:  { name: 'Profound composite model', description: 'clear-thinking' }
+631 Adding:  {
+  name: 'Reverse-engineered composite model',
+  description: 'context-sensitive'
+}
+632 Adding:  {
+  name: 'Visionary 4th generation knowledge base',
+  description: 'optimal'
+}
+633 Adding:  { name: 'Operative analyzing matrix', description: 'human-resource' }
+634 Adding:  {
+  name: 'Distributed stable data-warehouse',
+  description: 'systematic'
+}
+635 Adding:  {
+  name: 'Synergized system-worthy utilisation',
+  description: 'mission-critical'
+}
+636 Adding:  {
+  name: 'Multi-tiered 5th generation conglomeration',
+  description: 'dedicated'
+}
+637 Adding:  {
+  name: 'Implemented 4th generation capacity',
+  description: 'background'
+}
+638 Adding:  { name: 'Self-enabling neutral moderator', description: 'holistic' }
+639 Adding:  {
+  name: 'Open-source attitude-oriented contingency',
+  description: 'zero defect'
+}
+640 Adding:  {
+  name: 'Secured multi-tasking standardization',
+  description: 'uniform'
+}
+641 Adding:  { name: 'Future-proofed radical core', description: 'asymmetric' }
+642 Adding:  {
+  name: 'Enterprise-wide regional budgetary management',
+  description: 'exuding'
+}
+643 Adding:  {
+  name: 'Mandatory well-modulated capacity',
+  description: 'methodical'
+}
+644 Adding:  {
+  name: 'Customizable contextually-based strategy',
+  description: 'local'
+}
+645 Adding:  { name: 'Managed dynamic project', description: 'bifurcated' }
+646 Adding:  {
+  name: 'Synchronised executive definition',
+  description: 'intangible'
+}
+647 Adding:  { name: 'Ergonomic leading edge definition', description: 'dynamic' }
+648 Adding:  { name: 'Open-source stable service-desk', description: 'explicit' }
+649 Adding:  {
+  name: 'De-engineered non-volatile synergy',
+  description: 'system-worthy'
+}
+650 Adding:  {
+  name: 'Multi-channelled zero defect service-desk',
+  description: 'national'
+}
+651 Adding:  { name: 'Focused leading edge throughput', description: 'multimedia' }
+652 Adding:  {
+  name: 'Right-sized multi-state focus group',
+  description: 'methodical'
+}
+653 Adding:  {
+  name: 'Profound 4th generation utilisation',
+  description: 'homogeneous'
+}
+654 Adding:  { name: 'Enhanced hybrid success', description: 'multi-state' }
+655 Adding:  { name: 'Proactive directional middleware', description: 'scalable' }
+656 Adding:  {
+  name: 'Team-oriented full-range standardization',
+  description: 'motivating'
+}
+657 Adding:  {
+  name: 'Ameliorated demand-driven secured line',
+  description: 'actuating'
+}
+658 Adding:  {
+  name: 'Open-source composite implementation',
+  description: 'content-based'
+}
+659 Adding:  {
+  name: 'Polarised multi-state superstructure',
+  description: '3rd generation'
+}
+660 Adding:  {
+  name: 'Robust contextually-based collaboration',
+  description: 'system-worthy'
+}
+661 Adding:  {
+  name: 'Exclusive stable collaboration',
+  description: 'well-modulated'
+}
+662 Adding:  {
+  name: 'Distributed exuding conglomeration',
+  description: 'full-range'
+}
+663 Adding:  { name: 'Networked executive leverage', description: 'client-driven' }
+664 Adding:  { name: 'Focused reciprocal matrix', description: 'intermediate' }
+665 Adding:  {
+  name: 'Extended non-volatile knowledge base',
+  description: 'value-added'
+}
+666 Adding:  { name: 'Stand-alone regional capacity', description: 'system-worthy' }
+667 Adding:  {
+  name: 'Fully-configurable analyzing framework',
+  description: 'interactive'
+}
+668 Adding:  { name: 'Innovative dynamic success', description: 'neutral' }
+669 Adding:  {
+  name: 'Customer-focused incremental data-warehouse',
+  description: 'content-based'
+}
+670 Adding:  { name: 'Diverse user-facing firmware', description: 'holistic' }
+671 Adding:  {
+  name: 'Customizable mission-critical local area network',
+  description: 'content-based'
+}
+672 Adding:  {
+  name: 'Triple-buffered reciprocal methodology',
+  description: 'solution-oriented'
+}
+673 Adding:  {
+  name: 'Customizable explicit emulation',
+  description: 'disintermediate'
+}
+674 Adding:  {
+  name: 'Grass-roots value-added flexibility',
+  description: 'real-time'
+}
+675 Adding:  { name: 'Ergonomic even-keeled workforce', description: 'actuating' }
+676 Adding:  {
+  name: 'Multi-layered client-server access',
+  description: 'transitional'
+}
+677 Adding:  {
+  name: 'Grass-roots content-based workforce',
+  description: 'systemic'
+}
+678 Adding:  { name: 'Robust methodical strategy', description: 'motivating' }
+679 Adding:  { name: 'Innovative tangible encryption', description: 'multi-state' }
+680 Adding:  {
+  name: 'Vision-oriented zero defect adapter',
+  description: 'grid-enabled'
+}
+681 Adding:  {
+  name: 'Versatile 6th generation standardization',
+  description: 'global'
+}
+682 Adding:  { name: 'Organic national function', description: 'secondary' }
+683 Adding:  {
+  name: 'Self-enabling radical process improvement',
+  description: 'hybrid'
+}
+684 Adding:  {
+  name: 'Open-source bottom-line emulation',
+  description: 'foreground'
+}
+685 Adding:  { name: 'Advanced grid-enabled capability', description: 'composite' }
+686 Adding:  { name: 'Fundamental heuristic access', description: '24/7' }
+687 Adding:  {
+  name: 'Switchable client-driven challenge',
+  description: 'system-worthy'
+}
+688 Adding:  {
+  name: 'Innovative holistic Graphic Interface',
+  description: 'next generation'
+}
+689 Adding:  { name: 'Grass-roots global support', description: 'heuristic' }
+690 Adding:  { name: 'Phased fresh-thinking time-frame', description: 'executive' }
+691 Adding:  {
+  name: 'Synchronised impactful hardware',
+  description: 'well-modulated'
+}
+692 Adding:  {
+  name: 'Multi-layered responsive system engine',
+  description: 'global'
+}
+693 Adding:  {
+  name: 'Right-sized logistical Graphical User Interface',
+  description: 'maximized'
+}
+694 Adding:  {
+  name: 'Realigned 5th generation budgetary management',
+  description: 'incremental'
+}
+695 Adding:  { name: 'Phased tertiary help-desk', description: 'web-enabled' }
+696 Adding:  { name: 'Balanced bifurcated task-force', description: 'non-volatile' }
+697 Adding:  {
+  name: 'Sharable human-resource emulation',
+  description: 'solution-oriented'
+}
+698 Adding:  {
+  name: 'Diverse maximized process improvement',
+  description: 'object-oriented'
+}
+699 Adding:  {
+  name: 'Decentralized leading edge info-mediaries',
+  description: 'didactic'
+}
+700 Adding:  {
+  name: 'Reactive demand-driven attitude',
+  description: 'intermediate'
+}
+701 Adding:  {
+  name: 'Face to face mission-critical synergy',
+  description: 'multimedia'
+}
+702 Adding:  {
+  name: 'Right-sized methodical secured line',
+  description: 'contextually-based'
+}
+703 Adding:  { name: 'Quality-focused needs-based hub', description: 'tangible' }
+704 Adding:  { name: 'Organic 24 hour challenge', description: 'client-server' }
+705 Adding:  { name: 'Operative neutral parallelism', description: 'systematic' }
+706 Adding:  {
+  name: 'De-engineered interactive solution',
+  description: 'next generation'
+}
+707 Adding:  {
+  name: 'Object-based 6th generation matrices',
+  description: 'bi-directional'
+}
+708 Adding:  {
+  name: 'Triple-buffered dynamic standardization',
+  description: 'non-volatile'
+}
+709 Adding:  { name: 'Versatile non-volatile algorithm', description: 'systematic' }
+710 Adding:  {
+  name: 'Synergistic asymmetric productivity',
+  description: 'needs-based'
+}
+711 Adding:  { name: 'Sharable zero tolerance concept', description: 'background' }
+712 Adding:  { name: 'Mandatory tertiary hub', description: 'optimal' }
+713 Adding:  {
+  name: 'Exclusive 5th generation system engine',
+  description: 'real-time'
+}
+714 Adding:  {
+  name: 'Visionary disintermediate matrix',
+  description: 'non-volatile'
+}
+715 Adding:  {
+  name: 'Integrated homogeneous collaboration',
+  description: 'analyzing'
+}
+716 Adding:  {
+  name: 'Up-sized optimal artificial intelligence',
+  description: '4th generation'
+}
+717 Adding:  {
+  name: 'Proactive value-added alliance',
+  description: 'next generation'
+}
+718 Adding:  { name: 'Fundamental reciprocal benchmark', description: '24 hour' }
+719 Adding:  { name: 'Upgradable radical middleware', description: 'national' }
+720 Adding:  { name: 'Digitized didactic capability', description: 'modular' }
+721 Adding:  { name: 'Programmable multimedia frame', description: 'user-facing' }
+722 Adding:  { name: 'Realigned impactful array', description: 'directional' }
+723 Adding:  {
+  name: 'Multi-layered value-added open system',
+  description: 'mission-critical'
+}
+724 Adding:  { name: 'Optional user-facing adapter', description: 'bottom-line' }
+725 Adding:  {
+  name: 'Virtual client-driven utilisation',
+  description: 'zero administration'
+}
+726 Adding:  {
+  name: 'Multi-channelled asymmetric firmware',
+  description: 'tertiary'
+}
+727 Adding:  {
+  name: 'Assimilated secondary attitude',
+  description: 'system-worthy'
+}
+728 Adding:  { name: 'Customizable mobile access', description: 'object-oriented' }
+729 Adding:  {
+  name: 'De-engineered non-volatile orchestration',
+  description: 'transitional'
+}
+730 Adding:  { name: 'Centralized systematic capability', description: 'impactful' }
+731 Adding:  { name: 'Expanded user-facing capability', description: 'homogeneous' }
+732 Adding:  {
+  name: 'Team-oriented 6th generation moratorium',
+  description: 'optimizing'
+}
+733 Adding:  {
+  name: 'Diverse dynamic artificial intelligence',
+  description: 'stable'
+}
+734 Adding:  {
+  name: 'Compatible object-oriented product',
+  description: 'dedicated'
+}
+735 Adding:  {
+  name: 'Multi-channelled bandwidth-monitored infrastructure',
+  description: 'modular'
+}
+736 Adding:  {
+  name: 'Multi-channelled reciprocal standardization',
+  description: 'contextually-based'
+}
+737 Adding:  {
+  name: 'Open-architected leading edge encryption',
+  description: 'high-level'
+}
+738 Adding:  { name: 'Reduced cohesive time-frame', description: 'demand-driven' }
+739 Adding:  { name: 'Balanced bottom-line emulation', description: 'homogeneous' }
+740 Adding:  {
+  name: 'Cross-group client-server challenge',
+  description: 'directional'
+}
+741 Adding:  { name: 'Inverse maximized hardware', description: 'radical' }
+742 Adding:  {
+  name: 'Upgradable next generation system engine',
+  description: 'zero defect'
+}
+743 Adding:  { name: 'Up-sized directional solution', description: 'analyzing' }
+744 Adding:  { name: 'Object-based heuristic throughput', description: 'impactful' }
+745 Adding:  { name: 'Grass-roots explicit secured line', description: 'cohesive' }
+746 Adding:  {
+  name: 'Diverse homogeneous approach',
+  description: 'solution-oriented'
+}
+747 Adding:  {
+  name: 'Optimized incremental methodology',
+  description: 'transitional'
+}
+748 Adding:  { name: 'Vision-oriented stable service-desk', description: 'modular' }
+749 Adding:  { name: 'Profound next generation product', description: 'high-level' }
+750 Adding:  { name: 'Centralized maximized model', description: 'content-based' }
+751 Adding:  {
+  name: 'Implemented disintermediate hierarchy',
+  description: 'tangible'
+}
+752 Adding:  { name: 'Total asynchronous contingency', description: 'exuding' }
+753 Adding:  { name: 'Profit-focused multimedia framework', description: '24 hour' }
+754 Adding:  {
+  name: 'Multi-lateral object-oriented project',
+  description: 'impactful'
+}
+755 Adding:  {
+  name: 'Re-engineered responsive hierarchy',
+  description: 'clear-thinking'
+}
+756 Adding:  {
+  name: 'Sharable well-modulated methodology',
+  description: 'solution-oriented'
+}
+757 Adding:  { name: 'Cloned static protocol', description: 'next generation' }
+758 Adding:  {
+  name: 'Robust full-range artificial intelligence',
+  description: 'responsive'
+}
+759 Adding:  {
+  name: 'Streamlined incremental analyzer',
+  description: 'object-oriented'
+}
+760 Adding:  {
+  name: 'Distributed client-driven flexibility',
+  description: 'secondary'
+}
+761 Adding:  { name: 'Sharable static website', description: 'systematic' }
+762 Adding:  {
+  name: 'Reverse-engineered regional hardware',
+  description: 'fresh-thinking'
+}
+763 Adding:  {
+  name: 'Decentralized directional adapter',
+  description: 'empowering'
+}
+764 Adding:  {
+  name: 'Progressive 3rd generation model',
+  description: 'non-volatile'
+}
+765 Adding:  {
+  name: 'Synchronised bandwidth-monitored portal',
+  description: 'next generation'
+}
+766 Adding:  {
+  name: 'Programmable heuristic moratorium',
+  description: 'encompassing'
+}
+767 Adding:  {
+  name: 'Persistent encompassing focus group',
+  description: 'next generation'
+}
+768 Adding:  { name: 'Face to face dynamic protocol', description: 'multi-state' }
+769 Adding:  {
+  name: 'Secured eco-centric open architecture',
+  description: 'attitude-oriented'
+}
+770 Adding:  {
+  name: 'Cross-platform scalable forecast',
+  description: 'system-worthy'
+}
+771 Adding:  {
+  name: 'Reduced system-worthy infrastructure',
+  description: 'zero tolerance'
+}
+772 Adding:  { name: 'Managed stable strategy', description: 'regional' }
+773 Adding:  {
+  name: 'Cross-platform object-oriented migration',
+  description: 'zero administration'
+}
+774 Adding:  { name: 'Devolved local internet solution', description: 'executive' }
+775 Adding:  { name: 'Configurable regional model', description: 'systematic' }
+776 Adding:  { name: 'Managed hybrid matrices', description: 'upward-trending' }
+777 Adding:  { name: 'Reactive high-level concept', description: 'needs-based' }
+778 Adding:  {
+  name: 'User-centric multimedia infrastructure',
+  description: 'content-based'
+}
+779 Adding:  {
+  name: 'Switchable client-server open system',
+  description: 'incremental'
+}
+780 Adding:  { name: 'Horizontal executive core', description: 'system-worthy' }
+781 Adding:  { name: 'Virtual optimizing synergy', description: 'user-facing' }
+782 Adding:  { name: 'Persistent stable archive', description: 'mobile' }
+783 Adding:  { name: 'Up-sized heuristic circuit', description: 'clear-thinking' }
+784 Adding:  {
+  name: 'Versatile incremental knowledge base',
+  description: 'maximized'
+}
+785 Adding:  { name: 'Robust multimedia complexity', description: 'well-modulated' }
+786 Adding:  {
+  name: 'Universal cohesive collaboration',
+  description: 'transitional'
+}
+787 Adding:  {
+  name: 'Compatible real-time capability',
+  description: '6th generation'
+}
+788 Adding:  { name: 'Face to face motivating parallelism', description: 'local' }
+789 Adding:  {
+  name: 'Pre-emptive next generation customer loyalty',
+  description: '5th generation'
+}
+790 Adding:  {
+  name: 'Secured zero administration Graphical User Interface',
+  description: 'static'
+}
+791 Adding:  {
+  name: 'Future-proofed foreground artificial intelligence',
+  description: 'next generation'
+}
+792 Adding:  {
+  name: 'Multi-tiered mission-critical benchmark',
+  description: 'mission-critical'
+}
+793 Adding:  { name: 'Innovative analyzing website', description: '24/7' }
+794 Adding:  {
+  name: 'Innovative background orchestration',
+  description: 'methodical'
+}
+795 Adding:  {
+  name: 'Programmable bandwidth-monitored project',
+  description: 'discrete'
+}
+796 Adding:  { name: 'Profit-focused local definition', description: 'motivating' }
+797 Adding:  { name: 'Managed systemic matrix', description: 'modular' }
+798 Adding:  {
+  name: 'Organic leading edge initiative',
+  description: 'clear-thinking'
+}
+799 Adding:  { name: 'Open-source national capacity', description: 'actuating' }
+800 Adding:  {
+  name: 'Streamlined systematic superstructure',
+  description: 'dedicated'
+}
+801 Adding:  {
+  name: 'Re-contextualized mobile moderator',
+  description: 'solution-oriented'
+}
+802 Adding:  {
+  name: 'Synergistic reciprocal encryption',
+  description: 'demand-driven'
+}
+803 Adding:  { name: 'Inverse discrete software', description: 'clear-thinking' }
+804 Adding:  {
+  name: 'Customer-focused dynamic definition',
+  description: 'asynchronous'
+}
+805 Adding:  {
+  name: 'Synchronised fresh-thinking middleware',
+  description: 'web-enabled'
+}
+806 Adding:  {
+  name: 'Decentralized value-added parallelism',
+  description: 'methodical'
+}
+807 Adding:  {
+  name: 'Ameliorated grid-enabled local area network',
+  description: 'needs-based'
+}
+808 Adding:  {
+  name: 'Synergized responsive knowledge user',
+  description: 'asymmetric'
+}
+809 Adding:  { name: 'Exclusive homogeneous adapter', description: 'static' }
+810 Adding:  {
+  name: 'User-centric encompassing support',
+  description: 'directional'
+}
+811 Adding:  {
+  name: 'Right-sized 4th generation budgetary management',
+  description: 'user-facing'
+}
+812 Adding:  { name: 'Team-oriented executive product', description: 'optimizing' }
+813 Adding:  {
+  name: 'Open-architected real-time groupware',
+  description: 'attitude-oriented'
+}
+814 Adding:  {
+  name: 'Quality-focused 3rd generation implementation',
+  description: 'impactful'
+}
+815 Adding:  { name: 'Robust radical productivity', description: 'value-added' }
+816 Adding:  {
+  name: 'Horizontal dedicated implementation',
+  description: 'well-modulated'
+}
+817 Adding:  { name: 'Intuitive transitional core', description: 'fresh-thinking' }
+818 Adding:  { name: 'Mandatory local emulation', description: 'fault-tolerant' }
+819 Adding:  { name: 'Balanced executive project', description: 'object-oriented' }
+820 Adding:  {
+  name: 'Profound directional intranet',
+  description: 'disintermediate'
+}
+821 Adding:  {
+  name: 'Fundamental bandwidth-monitored complexity',
+  description: 'encompassing'
+}
+822 Adding:  { name: 'Open-source local intranet', description: 'optimal' }
+823 Adding:  {
+  name: 'De-engineered responsive functionalities',
+  description: 'actuating'
+}
+824 Adding:  {
+  name: 'Fundamental tertiary knowledge user',
+  description: 'interactive'
+}
+825 Adding:  { name: 'Implemented executive adapter', description: 'uniform' }
+826 Adding:  { name: 'Mandatory 5th generation workforce', description: '24/7' }
+827 Adding:  { name: 'Automated static protocol', description: 'coherent' }
+828 Adding:  { name: 'Multi-layered static policy', description: 'grid-enabled' }
+829 Adding:  {
+  name: 'Multi-tiered disintermediate frame',
+  description: 'zero defect'
+}
+830 Adding:  { name: 'Exclusive needs-based methodology', description: 'optimal' }
+831 Adding:  {
+  name: 'Cross-group web-enabled moratorium',
+  description: 'context-sensitive'
+}
+832 Adding:  { name: 'Polarised coherent conglomeration', description: 'maximized' }
+833 Adding:  { name: 'Up-sized coherent access', description: 'user-facing' }
+834 Adding:  {
+  name: 'Sharable 4th generation internet solution',
+  description: 'intangible'
+}
+835 Adding:  {
+  name: 'Configurable hybrid instruction set',
+  description: 'upward-trending'
+}
+836 Adding:  {
+  name: 'Cross-platform clear-thinking capability',
+  description: '24/7'
+}
+837 Adding:  {
+  name: 'Fully-configurable well-modulated model',
+  description: 'needs-based'
+}
+838 Adding:  {
+  name: 'Synergistic even-keeled definition',
+  description: 'background'
+}
+839 Adding:  {
+  name: 'Adaptive encompassing knowledge base',
+  description: 'composite'
+}
+840 Adding:  { name: 'Reactive radical circuit', description: 'optimizing' }
+841 Adding:  { name: 'Proactive reciprocal hierarchy', description: 'motivating' }
+842 Adding:  {
+  name: 'Re-engineered multimedia concept',
+  description: '4th generation'
+}
+843 Adding:  {
+  name: 'Realigned 4th generation database',
+  description: 'grid-enabled'
+}
+844 Adding:  {
+  name: 'Triple-buffered non-volatile ability',
+  description: 'intermediate'
+}
+845 Adding:  {
+  name: 'Persistent bottom-line focus group',
+  description: 'bottom-line'
+}
+846 Adding:  {
+  name: 'Reactive 6th generation info-mediaries',
+  description: 'neutral'
+}
+847 Adding:  {
+  name: 'Proactive mission-critical website',
+  description: 'zero defect'
+}
+848 Adding:  { name: 'Enhanced motivating matrices', description: '24/7' }
+849 Adding:  {
+  name: 'Progressive 3rd generation monitoring',
+  description: 'asynchronous'
+}
+850 Adding:  {
+  name: 'Upgradable demand-driven frame',
+  description: '6th generation'
+}
+851 Adding:  { name: 'Object-based global structure', description: 'grid-enabled' }
+852 Adding:  {
+  name: 'Seamless non-volatile pricing structure',
+  description: 'intermediate'
+}
+853 Adding:  { name: 'Cross-group holistic methodology', description: 'full-range' }
+854 Adding:  {
+  name: 'Intuitive 4th generation pricing structure',
+  description: 'zero tolerance'
+}
+855 Adding:  { name: 'Virtual even-keeled adapter', description: 'non-volatile' }
+856 Adding:  {
+  name: 'Multi-layered asynchronous open system',
+  description: 'modular'
+}
+857 Adding:  {
+  name: 'Distributed leading edge internet solution',
+  description: 'static'
+}
+858 Adding:  {
+  name: 'Sharable mission-critical info-mediaries',
+  description: 'hybrid'
+}
+859 Adding:  {
+  name: 'Re-contextualized maximized infrastructure',
+  description: 'intangible'
+}
+860 Adding:  {
+  name: 'Optional needs-based extranet',
+  description: '6th generation'
+}
+861 Adding:  {
+  name: 'Front-line object-oriented Graphic Interface',
+  description: 'cohesive'
+}
+862 Adding:  { name: 'Persevering foreground intranet', description: 'composite' }
+863 Adding:  { name: 'Monitored full-range capability', description: 'hybrid' }
+864 Adding:  { name: 'Pre-emptive bifurcated monitoring', description: 'uniform' }
+865 Adding:  {
+  name: 'Function-based 6th generation project',
+  description: 'value-added'
+}
+866 Adding:  {
+  name: 'User-centric asymmetric product',
+  description: '5th generation'
+}
+867 Adding:  {
+  name: 'De-engineered multi-tasking support',
+  description: 'bandwidth-monitored'
+}
+868 Adding:  { name: 'Face to face real-time capability', description: 'maximized' }
+869 Adding:  { name: 'Persevering intangible frame', description: 'demand-driven' }
+870 Adding:  { name: 'Configurable multi-state frame', description: 'tangible' }
+871 Adding:  {
+  name: 'User-centric solution-oriented budgetary management',
+  description: 'stable'
+}
+872 Adding:  { name: 'Reduced homogeneous interface', description: 'bifurcated' }
+873 Adding:  {
+  name: 'Intuitive tertiary database',
+  description: 'contextually-based'
+}
+874 Adding:  { name: 'Inverse exuding encoding', description: 'responsive' }
+875 Adding:  {
+  name: 'Public-key composite installation',
+  description: 'clear-thinking'
+}
+876 Adding:  {
+  name: 'Reverse-engineered modular open system',
+  description: 'system-worthy'
+}
+877 Adding:  { name: 'Reverse-engineered global core', description: 'eco-centric' }
+878 Adding:  {
+  name: 'Reactive asynchronous superstructure',
+  description: 'national'
+}
+879 Adding:  {
+  name: 'Vision-oriented eco-centric parallelism',
+  description: 'bandwidth-monitored'
+}
+880 Adding:  {
+  name: 'User-centric disintermediate emulation',
+  description: 'needs-based'
+}
+881 Adding:  { name: 'Virtual value-added policy', description: '6th generation' }
+882 Adding:  {
+  name: 'Operative 3rd generation monitoring',
+  description: 'full-range'
+}
+883 Adding:  {
+  name: 'Cross-platform zero defect intranet',
+  description: 'even-keeled'
+}
+884 Adding:  {
+  name: 'Triple-buffered multi-tasking toolset',
+  description: '24 hour'
+}
+885 Adding:  {
+  name: 'Self-enabling neutral superstructure',
+  description: 'directional'
+}
+886 Adding:  { name: 'Sharable global neural-net', description: 'local' }
+887 Adding:  {
+  name: 'Compatible bi-directional groupware',
+  description: 'bandwidth-monitored'
+}
+888 Adding:  {
+  name: 'Right-sized foreground knowledge base',
+  description: 'multimedia'
+}
+889 Adding:  {
+  name: 'Horizontal 5th generation concept',
+  description: 'responsive'
+}
+890 Adding:  {
+  name: 'De-engineered analyzing structure',
+  description: 'systematic'
+}
+891 Adding:  { name: 'Streamlined impactful array', description: 'grid-enabled' }
+892 Adding:  { name: 'Multi-layered dynamic solution', description: 'transitional' }
+893 Adding:  {
+  name: 'Decentralized system-worthy migration',
+  description: 'coherent'
+}
+894 Adding:  { name: 'Sharable 24/7 intranet', description: 'client-driven' }
+895 Adding:  { name: 'Polarised executive utilisation', description: 'static' }
+896 Adding:  {
+  name: 'Ergonomic disintermediate open architecture',
+  description: 'incremental'
+}
+897 Adding:  {
+  name: 'Inverse reciprocal customer loyalty',
+  description: 'even-keeled'
+}
+898 Adding:  { name: 'Operative intangible framework', description: 'systematic' }
+899 Adding:  {
+  name: 'Future-proofed context-sensitive pricing structure',
+  description: '24 hour'
+}
+900 Adding:  { name: 'Realigned stable hub', description: 'disintermediate' }
+901 Adding:  {
+  name: 'Centralized encompassing internet solution',
+  description: 'object-oriented'
+}
+902 Adding:  { name: 'Object-based cohesive protocol', description: 'full-range' }
+903 Adding:  {
+  name: 'Triple-buffered non-volatile process improvement',
+  description: 'explicit'
+}
+904 Adding:  {
+  name: 'Profound next generation conglomeration',
+  description: 'human-resource'
+}
+905 Adding:  { name: 'Robust 3rd generation portal', description: '4th generation' }
+906 Adding:  {
+  name: 'Self-enabling next generation contingency',
+  description: 'discrete'
+}
+907 Adding:  {
+  name: 'Self-enabling hybrid utilisation',
+  description: 'fault-tolerant'
+}
+908 Adding:  { name: 'Extended analyzing definition', description: 'real-time' }
+909 Adding:  { name: 'Right-sized maximized toolset', description: 'intermediate' }
+910 Adding:  {
+  name: 'Persistent even-keeled algorithm',
+  description: 'encompassing'
+}
+911 Adding:  { name: 'Self-enabling modular moratorium', description: 'holistic' }
+912 Adding:  {
+  name: 'Enterprise-wide holistic local area network',
+  description: 'motivating'
+}
+913 Adding:  {
+  name: 'Object-based client-server secured line',
+  description: '6th generation'
+}
+914 Adding:  {
+  name: 'Organized fault-tolerant structure',
+  description: 'composite'
+}
+915 Adding:  { name: 'Organic real-time analyzer', description: 'systematic' }
+916 Adding:  {
+  name: 'Team-oriented 5th generation artificial intelligence',
+  description: 'secondary'
+}
+917 Adding:  { name: 'Up-sized methodical attitude', description: 'executive' }
+918 Adding:  {
+  name: 'Expanded foreground groupware',
+  description: 'zero administration'
+}
+919 Adding:  {
+  name: 'Multi-lateral mission-critical strategy',
+  description: '24 hour'
+}
+920 Adding:  { name: 'Secured fresh-thinking frame', description: 'maximized' }
+921 Adding:  { name: 'Robust multi-tasking hub', description: 'dynamic' }
+922 Adding:  {
+  name: 'Persevering contextually-based productivity',
+  description: 'client-driven'
+}
+923 Adding:  {
+  name: 'Versatile user-facing standardization',
+  description: '24 hour'
+}
+924 Adding:  { name: 'Enhanced systemic collaboration', description: 'full-range' }
+925 Adding:  {
+  name: 'Reverse-engineered content-based database',
+  description: 'didactic'
+}
+926 Adding:  {
+  name: 'Face to face intangible attitude',
+  description: 'leading edge'
+}
+927 Adding:  {
+  name: 'Adaptive maximized open architecture',
+  description: 'composite'
+}
+928 Adding:  {
+  name: 'Extended content-based interface',
+  description: 'object-oriented'
+}
+929 Adding:  {
+  name: 'Multi-lateral exuding knowledge base',
+  description: 'optimal'
+}
+930 Adding:  { name: 'Digitized local benchmark', description: 'human-resource' }
+931 Adding:  { name: 'Persistent encompassing support', description: 'discrete' }
+932 Adding:  {
+  name: 'Fundamental full-range structure',
+  description: 'needs-based'
+}
+933 Adding:  { name: 'Proactive modular success', description: 'full-range' }
+934 Adding:  { name: 'Networked well-modulated middleware', description: '24 hour' }
+935 Adding:  { name: 'Function-based regional ability', description: 'optimizing' }
+936 Adding:  { name: 'Robust empowering benchmark', description: 'responsive' }
+937 Adding:  {
+  name: 'Open-architected systemic knowledge user',
+  description: 'attitude-oriented'
+}
+938 Adding:  { name: 'Polarised transitional time-frame', description: 'dynamic' }
+939 Adding:  { name: 'Pre-emptive dynamic matrix', description: 'exuding' }
+940 Adding:  {
+  name: 'Re-contextualized system-worthy encoding',
+  description: 'needs-based'
+}
+941 Adding:  {
+  name: 'Fundamental motivating methodology',
+  description: 'logistical'
+}
+942 Adding:  {
+  name: 'Secured zero tolerance moratorium',
+  description: 'bifurcated'
+}
+943 Adding:  {
+  name: 'Persevering radical info-mediaries',
+  description: 'disintermediate'
+}
+944 Adding:  {
+  name: 'Enhanced intangible database',
+  description: 'solution-oriented'
+}
+945 Adding:  { name: 'Switchable bifurcated project', description: 'executive' }
+946 Adding:  {
+  name: 'Digitized maximized approach',
+  description: 'disintermediate'
+}
+947 Adding:  {
+  name: 'Enterprise-wide clear-thinking adapter',
+  description: 'asynchronous'
+}
+948 Adding:  { name: 'Automated local productivity', description: 'mobile' }
+949 Adding:  { name: 'Balanced didactic approach', description: 'mission-critical' }
+950 Adding:  {
+  name: 'Profound disintermediate encryption',
+  description: 'even-keeled'
+}
+951 Adding:  {
+  name: 'Versatile dedicated customer loyalty',
+  description: 'impactful'
+}
+952 Adding:  {
+  name: 'Monitored clear-thinking secured line',
+  description: 'logistical'
+}
+953 Adding:  {
+  name: 'Profound next generation frame',
+  description: 'human-resource'
+}
+954 Adding:  { name: 'Optional stable time-frame', description: 'even-keeled' }
+955 Adding:  {
+  name: 'Team-oriented bottom-line model',
+  description: 'grid-enabled'
+}
+956 Adding:  { name: 'Proactive modular database', description: 'grid-enabled' }
+957 Adding:  {
+  name: 'Centralized national orchestration',
+  description: 'bottom-line'
+}
+958 Adding:  {
+  name: 'Focused client-server groupware',
+  description: 'next generation'
+}
+959 Adding:  {
+  name: 'Phased mission-critical Graphic Interface',
+  description: 'high-level'
+}
+960 Adding:  { name: 'Reduced regional complexity', description: 'human-resource' }
+961 Adding:  { name: 'Seamless eco-centric alliance', description: 'scalable' }
+962 Adding:  {
+  name: 'Managed 24 hour pricing structure',
+  description: 'content-based'
+}
+963 Adding:  {
+  name: 'Vision-oriented upward-trending utilisation',
+  description: 'content-based'
+}
+964 Adding:  { name: 'Exclusive value-added forecast', description: 'value-added' }
+965 Adding:  { name: 'Mandatory multi-state portal', description: 'systemic' }
+966 Adding:  {
+  name: 'Profound maximized infrastructure',
+  description: 'foreground'
+}
+967 Adding:  { name: 'Intuitive interactive array', description: 'multi-state' }
+968 Adding:  {
+  name: 'Sharable actuating data-warehouse',
+  description: 'background'
+}
+969 Adding:  { name: 'Programmable dynamic hub', description: 'modular' }
+970 Adding:  {
+  name: 'Vision-oriented incremental service-desk',
+  description: 'zero administration'
+}
+971 Adding:  {
+  name: 'Devolved bi-directional flexibility',
+  description: 'bi-directional'
+}
+972 Adding:  { name: 'Synergized foreground encryption', description: 'systemic' }
+973 Adding:  { name: 'Streamlined human-resource frame', description: 'cohesive' }
+974 Adding:  {
+  name: 'Inverse clear-thinking infrastructure',
+  description: 'uniform'
+}
+975 Adding:  {
+  name: 'Future-proofed real-time task-force',
+  description: '5th generation'
+}
+976 Adding:  { name: 'Integrated exuding moderator', description: 'responsive' }
+977 Adding:  { name: 'Organized national moratorium', description: 'national' }
+978 Adding:  {
+  name: 'Customizable intermediate service-desk',
+  description: 'mission-critical'
+}
+979 Adding:  {
+  name: 'Open-architected fresh-thinking budgetary management',
+  description: 'tangible'
+}
+980 Adding:  {
+  name: 'Ameliorated multimedia moratorium',
+  description: 'contextually-based'
+}
+981 Adding:  { name: 'Multi-lateral maximized secured line', description: 'hybrid' }
+982 Adding:  { name: 'Devolved object-oriented time-frame', description: 'uniform' }
+983 Adding:  {
+  name: 'Reverse-engineered executive definition',
+  description: 'even-keeled'
+}
+984 Adding:  {
+  name: 'Integrated high-level encoding',
+  description: 'context-sensitive'
+}
+985 Adding:  { name: 'Monitored fault-tolerant portal', description: 'methodical' }
+986 Adding:  { name: 'Self-enabling heuristic hub', description: 'analyzing' }
+987 Adding:  { name: 'Ameliorated intangible forecast', description: 'modular' }
+988 Adding:  {
+  name: 'Proactive motivating throughput',
+  description: 'bi-directional'
+}
+989 Adding:  {
+  name: 'Advanced modular Graphical User Interface',
+  description: 'bandwidth-monitored'
+}
+990 Adding:  { name: 'Quality-focused maximized matrix', description: 'optimizing' }
+991 Adding:  {
+  name: 'Assimilated intangible circuit',
+  description: 'multi-tasking'
+}
+992 Adding:  { name: 'Phased holistic contingency', description: 'optimal' }
+993 Adding:  { name: 'Ergonomic holistic knowledge user', description: 'static' }
+994 Adding:  { name: 'Exclusive multi-state alliance', description: 'zero defect' }
+995 Adding:  {
+  name: 'Fundamental disintermediate Graphical User Interface',
+  description: '3rd generation'
+}
+996 Adding:  { name: 'Virtual intangible frame', description: 'user-facing' }
+997 Adding:  { name: 'Down-sized background hardware', description: 'web-enabled' }
+998 Adding:  { name: 'Automated intangible workforce', description: 'coherent' }
+999 Adding:  {
+  name: 'Function-based maximized structure',
+  description: 'multi-tasking'
+}
+1000 Adding:  { name: 'Robust systematic product', description: 'disintermediate' }
+Fake data populated
+You are OK to go. Please, access http://localhost:3000
+Done in 488.51s.
